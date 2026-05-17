@@ -1,5 +1,10 @@
 name: Scrape jobs and deploy site
 
+
+concurrency:
+  group: scrape-and-deploy
+  cancel-in-progress: true
+
 on:
   schedule:
     - cron: '0 */6 * * *'
@@ -40,6 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add docs/data/jobs.json
           git diff --staged --quiet || git commit -m "chore: update jobs data [skip ci]"
           git push
