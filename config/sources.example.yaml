@@ -30,33 +30,18 @@ default_include_patterns: &default_include_patterns
   - pdf
 
 sources:
-  - name: "Naukri.com"
-    url: "https://www.naukri.com"
+  - name: "ISI Kolkata"
+    url: "https://www.isical.ac.in/public/jobs"
     type: "auto"
-    category: "indian_portal"
-    freshness_days: 14
-    include_patterns: *default_include_patterns
-
-  - name: "LinkedIn Jobs"
-    url: "https://www.linkedin.com/jobs/"
-    type: "auto"
-    category: "indian_portal"
-    freshness_days: 14
-    include_patterns: *default_include_patterns
-
-  - name: "Internshala"
-    url: "https://internshala.com/internships/"
-    type: "auto"
-    category: "indian_portal"
-    freshness_days: 14
-    include_patterns: *default_include_patterns
-
-  - name: "Indeed India"
-    url: "https://in.indeed.com"
-    type: "auto"
-    category: "indian_portal"
-    freshness_days: 14
-    include_patterns: *default_include_patterns
+    freshness_days: 90
+    include_patterns:
+      - job
+      - career
+      - recruitment
+      - vacancy
+      - internship
+      - notice
+      - pdf
 
   - name: "Glassdoor"
     url: "https://www.glassdoor.co.in/Job/index.htm"
@@ -221,13 +206,6 @@ sources:
 
   - name: "Jadavpur University Recruitments"
     url: "https://jaduniv.edu.in/recruitments/"
-    type: "auto"
-    category: "research"
-    freshness_days: 90
-    include_patterns: *default_include_patterns
-
-  - name: "ISI Kolkata Jobs"
-    url: "https://www.isical.ac.in/jobs"
     type: "auto"
     category: "research"
     freshness_days: 90
