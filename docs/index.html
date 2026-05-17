@@ -104,7 +104,8 @@
         font-size: 0.92rem;
       }
       .job,
-      .custom-source {
+      .custom-source,
+      .warning {
         display: grid;
         gap: 10px;
         padding: 18px;
@@ -135,6 +136,10 @@
         border-radius: 16px;
         color: #cbd5e1;
         background: rgba(30, 41, 59, 0.56);
+      }
+      .warning {
+        background: rgba(120, 53, 15, 0.28);
+        border-color: rgba(251, 191, 36, 0.3);
       }
       pre {
         white-space: pre-wrap;
@@ -272,11 +277,17 @@
         <h2>Live opportunities</h2>
         <div class="jobs" id="jobs"></div>
       </section>
+
+      <section class="panel">
+        <h2>Scrape diagnostics</h2>
+        <p class="help">A source can be configured but absent from live results if it blocked scraping, returned no matching links, or had no live notices after filtering.</p>
+        <div class="stack" id="diagnostics"></div>
+      </section>
     </main>
 
     <script>
       const state = {
-        data: { jobs: [], generated_at: null, errors: [] },
+        data: { jobs: [], sources: [], stats: [], generated_at: null, errors: [] },
         customSources: JSON.parse(localStorage.getItem("customSources") || "[]"),
       };
 
@@ -299,6 +310,7 @@
         newSourceFreshness: document.querySelector("#newSourceFreshness"),
         newSourcePatterns: document.querySelector("#newSourcePatterns"),
         customSources: document.querySelector("#customSources"),
+        diagnostics: document.querySelector("#diagnostics"),
         clearSources: document.querySelector("#clearSources"),
       };
 
@@ -315,7 +327,20 @@
       }
 
       function jobText(job) {
-        return `${job.title} ${job.source} ${job.summary} ${(job.matched_keywords || []).join(" ")}`.toLowerCase();
+        return [
+          job.title,
+          job.source,
+          job.organization,
+          job.summary,
+          job.description,
+          job.location,
+          job.job_type,
+          job.category,
+          job.salary,
+          job.experience,
+          (job.matched_keywords || []).join(" "),
+          (job.tags || []).join(" "),
+        ].join(" ").toLowerCase();
       }
 
       function localScore(job) {
@@ -373,6 +398,7 @@
         elements.summary.innerHTML = `
           <span>${state.data.jobs.length} stored live matches</span>
           <span>${jobs.length} after filters</span>
+          <span>${(state.data.sources || []).length} configured sources</span>
           <span>Updated: ${state.data.generated_at ? new Date(state.data.generated_at).toLocaleString() : "not yet"}</span>
           <span>${state.data.errors.length} scrape warnings</span>
         `;
@@ -387,6 +413,10 @@
                     <span class="badge">${escapeHtml(job.source)}</span>
                     <span class="badge">Score ${score}</span>
                     <span class="badge">${escapeHtml(job.content_type || "html")}</span>
+                    ${job.job_type ? `<span class="badge">${escapeHtml(job.job_type)}</span>` : ""}
+                    ${job.category ? `<span class="badge">${escapeHtml(job.category)}</span>` : ""}
+                    ${job.location ? `<span class="badge">${escapeHtml(job.location)}</span>` : ""}
+                    ${job.salary ? `<span class="badge">${escapeHtml(job.salary)}</span>` : ""}
                     ${job.deadline ? `<span class="badge">Deadline ${escapeHtml(job.deadline)}</span>` : `<span class="badge">No deadline found</span>`}
                   </div>
                   <p>${escapeHtml(job.summary || "No summary available.")}</p>
@@ -420,6 +450,44 @@
         `).join("");
       }
 
+      function renderDiagnostics() {
+        const sourceCounts = state.data.jobs.reduce((counts, job) => {
+          counts[job.source] = (counts[job.source] || 0) + 1;
+          return counts;
+        }, {});
+        const sources = state.data.sources && state.data.sources.length
+          ? state.data.sources
+          : [...new Set(state.data.jobs.map((job) => job.source))].map((name) => ({ name, url: "" }));
+        const errorsBySource = state.data.errors.reduce((counts, error) => {
+          counts[error.source] = (counts[error.source] || 0) + 1;
+          return counts;
+        }, {});
+        const statsBySource = (state.data.stats || []).reduce((stats, item) => {
+          stats[item.source] = item;
+          return stats;
+        }, {});
+
+        elements.diagnostics.innerHTML = sources.map((source) => {
+          const count = sourceCounts[source.name] || 0;
+          const errorCount = errorsBySource[source.name] || 0;
+          const stats = statsBySource[source.name] || {};
+          const sourceErrors = state.data.errors.filter((error) => error.source === source.name).slice(0, 2);
+          return `
+            <article class="${errorCount ? "warning" : "notice"}">
+              <h3>${escapeHtml(source.name)}</h3>
+              ${source.url ? `<p><a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.url)}</a></p>` : ""}
+              <div class="badges">
+                <span class="badge">${count} live matches</span>
+                <span class="badge">${Number(stats.candidates || 0)} candidate links</span>
+                <span class="badge">${errorCount} scrape warnings</span>
+                ${source.category ? `<span class="badge">${escapeHtml(source.category)}</span>` : ""}
+              </div>
+              ${sourceErrors.length ? `<p class="help">${escapeHtml(sourceErrors.map((error) => error.error).join(" | "))}</p>` : ""}
+            </article>
+          `;
+        }).join("");
+      }
+
       function escapeHtml(value) {
         return String(value || "").replace(/[&<>"']/g, (char) => ({
           "&": "&amp;",
@@ -447,9 +515,13 @@
           elements.jobs.innerHTML = `<div class="empty">Could not load data/jobs.json. Run the scraper first.</div>`;
         }
 
-        const sources = [...new Set(state.data.jobs.map((job) => job.source))].sort();
+        const sourceNames = state.data.sources && state.data.sources.length
+          ? state.data.sources.map((source) => source.name)
+          : state.data.jobs.map((job) => job.source);
+        const sources = [...new Set(sourceNames)].sort();
         elements.sourceFilter.innerHTML += sources.map((source) => `<option value="${escapeAttribute(source)}">${escapeHtml(source)}</option>`).join("");
         renderCustomSources();
+        renderDiagnostics();
         renderJobs();
       }
 

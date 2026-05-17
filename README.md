@@ -45,6 +45,9 @@ sources:
   - name: "Example University"
     url: "https://example.edu/careers"
     freshness_days: 90
+    search_urls:
+      - "https://example.edu/careers?query=internship"
+      - "https://example.edu/careers?query=research"
     include_patterns:
       - recruitment
       - vacancy
@@ -55,6 +58,7 @@ sources:
 Notes:
 
 - Use the page where notices are listed, not the institution homepage when possible.
+- For job portals, prefer `search_urls` that already contain keywords/location filters instead of the generic homepage.
 - Add words that commonly appear in useful links under `include_patterns`.
 - For PDF-heavy university sites, include `notice`, `recruitment`, `vacancy`, and `pdf`.
 - Some websites block automated requests or require login. LinkedIn and Indeed may limit scraping; official career pages and university notice pages are more reliable.
@@ -94,6 +98,7 @@ The website supports:
 - PDF-only or HTML-only filtering.
 - User-specific resume/skill keyword re-ranking.
 - User-specific hide keywords.
+- Source diagnostics showing configured sources, candidate links, matches, and scrape warnings.
 
 Because GitHub Pages is static, these filters work on already-scraped data from `docs/data/jobs.json`.
 
@@ -114,4 +119,5 @@ The workflow also runs every 6 hours. Scheduled GitHub Actions can be delayed du
 - Expiry detection is heuristic: explicit deadlines are best; otherwise recent notices are kept based on `freshness_days`.
 - Scanned image-only PDFs need OCR, which is intentionally not included in this free lightweight version.
 - A static GitHub Pages site cannot let anonymous visitors permanently change the central scrape list. They can generate a source request, but the repository owner must commit it.
+- The larger FastAPI/Supabase/AI design is possible, but this repository intentionally avoids paid or account-heavy backend dependencies.
 - For a multi-customer SaaS product, GitHub Pages is not the right backend. This repo is designed as a free personal/job-monitor deployment.
