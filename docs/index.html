@@ -3,64 +3,634 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Job Notice Monitor</title>
+    <title>Job Horizon</title>
     <style>
       :root {
         color-scheme: light dark;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #0f172a;
-        color: #e2e8f0;
+        --bg: #ffffff;
+        --panel: #ffffff;
+        --panel-soft: #f8fafc;
+        --text: #1a1a1a;
+        --muted: #374151;
+        --line: #d1d5db;
+        --navy: #1e3a8a;
+        --navy-soft: #dbeafe;
+        --crimson: #991b1b;
+        --green: #166534;
+        font-family: Inter, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
       }
+      [data-theme="dark"] {
+        --bg: #121212;
+        --panel: #181818;
+        --panel-soft: #202020;
+        --text: #f5f5f5;
+        --muted: #d4d4d4;
+        --line: #3f3f46;
+        --navy: #93c5fd;
+        --navy-soft: #172554;
+        --crimson: #fca5a5;
+        --green: #86efac;
+      }
+      * { box-sizing: border-box; }
       body {
         margin: 0;
-        min-height: 100vh;
-        background: radial-gradient(circle at top left, #1e3a8a 0, transparent 32rem), #0f172a;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.45;
       }
-      main {
-        max-width: 1180px;
+      a { color: var(--navy); text-decoration: none; font-weight: 700; }
+      a:hover { text-decoration: underline; }
+      button, input, select, textarea {
+        font: inherit;
+      }
+      button {
+        border: 1px solid var(--navy);
+        border-radius: 10px;
+        background: var(--navy);
+        color: #ffffff;
+        padding: 10px 12px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: var(--panel);
+        color: var(--navy);
+      }
+      button.danger {
+        border-color: var(--crimson);
+        background: var(--crimson);
+      }
+      input, select, textarea {
+        width: 100%;
+        min-height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--panel);
+        color: var(--text);
+        padding: 10px 12px;
+      }
+      label { display: grid; gap: 6px; font-weight: 800; }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--panel);
+        border-bottom: 1px solid var(--line);
+      }
+      .topbar-inner, main {
+        max-width: 1280px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 16px;
       }
-      header,
-      section,
-      form,
-      .jobs,
-      .stack {
-        display: grid;
-        gap: 14px;
-      }
-      h1 {
-        font-size: clamp(2rem, 5vw, 4rem);
-        line-height: 1;
-        margin: 0;
-        letter-spacing: -0.06em;
-      }
-      h2,
-      h3,
-      p {
-        margin: 0;
-      }
-      p,
-      .help {
-        color: #cbd5e1;
-      }
-      .panel {
-        background: rgba(15, 23, 42, 0.78);
-        border: 1px solid rgba(148, 163, 184, 0.22);
-        border-radius: 22px;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
-        padding: 18px;
-        margin-top: 18px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         gap: 12px;
       }
-      .wide {
-        grid-column: span 2;
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 900;
+        color: var(--navy);
+        letter-spacing: -0.03em;
       }
-      label {
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: var(--navy);
+        color: #ffffff;
+      }
+      .hero {
+        display: grid;
+        gap: 16px;
+        padding: 28px 0 18px;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+      .hero p { margin: 0; color: var(--muted); font-weight: 650; }
+      .search-panel, .panel {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--panel);
+        padding: 16px;
+      }
+      .search-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr auto;
+        gap: 12px;
+        align-items: end;
+      }
+      .inline-check {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 800;
+        color: var(--text);
+      }
+      .inline-check input { width: auto; min-height: auto; }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin: 14px 0;
+      }
+      .chips, .actions, .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+      .chip, .badge {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 9px;
+        background: var(--panel-soft);
+        color: var(--text);
+        font-size: 0.86rem;
+        font-weight: 800;
+      }
+      .badge.source { border-color: var(--navy); color: var(--navy); }
+      .badge.alert { border-color: var(--crimson); color: var(--crimson); }
+      .badge.ok { border-color: var(--green); color: var(--green); }
+      .table-wrap {
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 920px;
+      }
+      th, td {
+        border-bottom: 1px solid var(--line);
+        padding: 11px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        position: sticky;
+        top: 67px;
+        background: var(--navy-soft);
+        color: var(--text);
+        font-size: 0.86rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      tr { cursor: pointer; }
+      tr.active, tr:hover { background: var(--panel-soft); }
+      .role-cell { font-weight: 900; max-width: 360px; }
+      .split {
+        display: grid;
+        grid-template-columns: minmax(280px, 40%) 1fr;
+        gap: 14px;
+      }
+      .cards {
+        max-height: 72vh;
+        overflow: auto;
+        display: grid;
+        gap: 10px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px;
+        background: var(--panel);
+        cursor: pointer;
+      }
+      .card.active, .card:hover { outline: 2px solid var(--navy); }
+      .card h3 { margin: 0 0 8px; font-size: 1rem; }
+      .preview {
+        position: sticky;
+        top: 86px;
+        align-self: start;
+        min-height: 420px;
+      }
+      .preview h2 { margin-top: 0; }
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 14px 0;
+      }
+      .summary-item {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10px;
+        background: var(--panel-soft);
+      }
+      .summary-item strong {
+        display: block;
+        color: var(--muted);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .empty {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+        background: var(--panel-soft);
+        color: var(--text);
+        font-weight: 800;
+      }
+      .hidden { display: none !important; }
+      @media (max-width: 860px) {
+        .search-grid, .split, .summary-grid { grid-template-columns: 1fr; }
+        .preview { position: static; }
+        th { top: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="topbar-inner">
+        <div class="brand"><span class="brand-mark">JH</span><span>Job Horizon</span></div>
+        <div class="actions">
+          <button class="secondary" id="rssButton" type="button">Generate RSS/Webfeed</button>
+          <button class="secondary" id="themeButton" type="button">Toggle Theme</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <h1>Official jobs, internships, fellowships.</h1>
+        <p>Text-first recruitment search with fast filters, verified source badges, and no registration.</p>
+        <div class="search-panel">
+          <div class="search-grid">
+            <label>
+              Keyword / Role
+              <input id="keywordInput" type="search" placeholder="Python, JRF, internship, data analyst" />
+            </label>
+            <label>
+              Location
+              <input id="locationInput" type="search" placeholder="India, Kolkata, Bengaluru" />
+            </label>
+            <label>
+              Sector
+              <select id="sectorInput">
+                <option value="">All sectors</option>
+                <option value="government">Government</option>
+                <option value="tech">Corporate</option>
+                <option value="startup">Startup</option>
+                <option value="research">Research</option>
+                <option value="fellowship">Fellowship</option>
+                <option value="international">International</option>
+                <option value="indian_portal">Indian portals</option>
+              </select>
+            </label>
+            <button id="setHorizonButton" type="button">Set Your Horizon</button>
+          </div>
+          <div class="toolbar">
+            <div class="chips">
+              <label class="inline-check"><input id="remoteInput" type="checkbox" /> Remote</label>
+              <label class="inline-check"><input id="deadlineSoonInput" type="checkbox" /> Deadline &lt; 48h</label>
+              <label class="inline-check"><input id="pdfInput" type="checkbox" /> PDF only</label>
+            </div>
+            <div class="chips" id="horizonChips"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar">
+        <div class="meta-row" id="statusMeta"></div>
+        <div class="actions">
+          <button class="secondary" id="tableViewButton" type="button">Compact Table</button>
+          <button class="secondary" id="splitViewButton" type="button">Split Screen</button>
+        </div>
+      </section>
+
+      <section id="tableView" class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date Posted</th>
+              <th>Organization</th>
+              <th>Role</th>
+              <th>Location</th>
+              <th>Deadline</th>
+              <th>Source</th>
+              <th>Action Link</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </section>
+
+      <section id="splitView" class="split hidden">
+        <div class="cards" id="cardList"></div>
+        <article class="panel preview" id="previewPane"></article>
+      </section>
+    </main>
+
+    <script>
+      const state = {
+        data: { jobs: [], sources: [], stats: [], generated_at: null, errors: [] },
+        filtered: [],
+        selectedIndex: 0,
+        view: localStorage.getItem("view") || "table",
+      };
+
+      const el = {
+        keyword: document.querySelector("#keywordInput"),
+        location: document.querySelector("#locationInput"),
+        sector: document.querySelector("#sectorInput"),
+        remote: document.querySelector("#remoteInput"),
+        deadlineSoon: document.querySelector("#deadlineSoonInput"),
+        pdf: document.querySelector("#pdfInput"),
+        horizon: document.querySelector("#horizonChips"),
+        setHorizon: document.querySelector("#setHorizonButton"),
+        rss: document.querySelector("#rssButton"),
+        theme: document.querySelector("#themeButton"),
+        status: document.querySelector("#statusMeta"),
+        tableView: document.querySelector("#tableView"),
+        splitView: document.querySelector("#splitView"),
+        tableBody: document.querySelector("#tableBody"),
+        cardList: document.querySelector("#cardList"),
+        preview: document.querySelector("#previewPane"),
+        tableButton: document.querySelector("#tableViewButton"),
+        splitButton: document.querySelector("#splitViewButton"),
+      };
+
+      const savedFilters = JSON.parse(localStorage.getItem("horizonFilters") || "{}");
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.dataset.theme = savedTheme;
+      el.keyword.value = savedFilters.keyword || "";
+      el.location.value = savedFilters.location || "";
+      el.sector.value = savedFilters.sector || "";
+      el.remote.checked = Boolean(savedFilters.remote);
+      el.deadlineSoon.checked = Boolean(savedFilters.deadlineSoon);
+      el.pdf.checked = Boolean(savedFilters.pdf);
+
+      function textOf(job) {
+        return [
+          job.title, job.source, job.organization, job.summary, job.description,
+          job.location, job.job_type, job.category, job.salary, job.experience,
+          (job.matched_keywords || []).join(" "), (job.tags || []).join(" "),
+        ].join(" ").toLowerCase();
+      }
+
+      function normalizeDate(value) {
+        if (!value) return "";
+        return String(value).slice(0, 10);
+      }
+
+      function daysUntil(date) {
+        if (!date) return Infinity;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const target = new Date(`${normalizeDate(date)}T00:00:00`);
+        return Math.round((target - today) / 86400000);
+      }
+
+      function sourceBadge(job) {
+        const category = (job.category || "").toLowerCase();
+        if (category === "government") return "Official Government Portal";
+        if (["tech", "startup"].includes(category)) return "Verified Corporate Career Page";
+        if (["research", "fellowship"].includes(category)) return "Official Institution Notice";
+        if (category === "international") return "Official International Portal";
+        return "Configured Source";
+      }
+
+      function parsedMetric(job, label) {
+        const text = textOf(job);
+        if (label === "Age Limit") {
+          const match = text.match(/age[^.\n]{0,40}(\d{2})/i);
+          return match ? `${match[1]} years` : "Not parsed";
+        }
+        if (label === "Application Fees") {
+          const match = text.match(/(?:fee|fees|application fee)[^.\n]{0,60}/i);
+          return match ? match[0] : "Not parsed";
+        }
+        if (label === "Required Education") {
+          const match = text.match(/\b(phd|m\.tech|mtech|b\.tech|btech|msc|m\.sc|bsc|b\.sc|graduate|postgraduate|degree)\b/i);
+          return match ? match[0].toUpperCase() : "Not parsed";
+        }
+        return job.deadline ? normalizeDate(job.deadline) : "No deadline found";
+      }
+
+      function applyFilters() {
+        const keyword = el.keyword.value.trim().toLowerCase();
+        const location = el.location.value.trim().toLowerCase();
+        const sector = el.sector.value.trim().toLowerCase();
+        state.filtered = state.data.jobs.filter((job) => {
+          const text = textOf(job);
+          if (keyword && !text.includes(keyword)) return false;
+          if (location && !text.includes(location)) return false;
+          if (sector && String(job.category || "").toLowerCase() !== sector) return false;
+          if (el.remote.checked && !text.includes("remote") && !text.includes("work from home")) return false;
+          if (el.deadlineSoon.checked && daysUntil(job.deadline) > 2) return false;
+          if (el.pdf.checked && job.content_type !== "pdf") return false;
+          return true;
+        });
+        state.filtered.sort((a, b) => {
+          const deadlineDiff = daysUntil(a.deadline) - daysUntil(b.deadline);
+          if (Number.isFinite(deadlineDiff) && deadlineDiff !== 0) return deadlineDiff;
+          return Number(b.score || 0) - Number(a.score || 0);
+        });
+        if (state.selectedIndex >= state.filtered.length) state.selectedIndex = Math.max(0, state.filtered.length - 1);
+        render();
+      }
+
+      function renderStatus() {
+        el.status.innerHTML = `
+          <span class="chip">${state.filtered.length} visible</span>
+          <span class="chip">${state.data.jobs.length} live notices</span>
+          <span class="chip">${state.data.configured_source_count || state.data.sources.length || 0} configured sources</span>
+          <span class="chip">Updated ${state.data.generated_at ? new Date(state.data.generated_at).toLocaleString() : "not yet"}</span>
+          <span class="chip">Shortcuts: J/K move, O open</span>
+        `;
+      }
+
+      function renderHorizon() {
+        const chips = [];
+        if (el.keyword.value) chips.push(`Role: ${el.keyword.value}`);
+        if (el.location.value) chips.push(`Region: ${el.location.value}`);
+        if (el.sector.value) chips.push(`Sector: ${el.sector.value}`);
+        if (el.remote.checked) chips.push("Remote");
+        el.horizon.innerHTML = chips.length ? chips.map((chip) => `<span class="chip">${escapeHtml(chip)}</span>`).join("") : `<span class="chip">No horizon locked</span>`;
+      }
+
+      function renderTable() {
+        el.tableBody.innerHTML = state.filtered.length ? state.filtered.map((job, index) => {
+          const urgent = daysUntil(job.deadline) <= 2;
+          return `
+            <tr class="${index === state.selectedIndex ? "active" : ""}" data-index="${index}">
+              <td>${escapeHtml(normalizeDate(job.posted_date) || normalizeDate(job.checked_at) || "Unknown")}</td>
+              <td>${escapeHtml(job.organization || job.source || "Unknown")}</td>
+              <td class="role-cell">${escapeHtml(job.title || "Untitled")}</td>
+              <td>${escapeHtml(job.location || "Not parsed")}</td>
+              <td><span class="badge ${urgent ? "alert" : "ok"}">${escapeHtml(normalizeDate(job.deadline) || "No deadline")}</span></td>
+              <td><span class="badge source">${escapeHtml(sourceBadge(job))}</span></td>
+              <td><a href="${escapeAttr(job.url)}" target="_blank" rel="noreferrer">Apply / Notice</a></td>
+            </tr>
+          `;
+        }).join("") : `<tr><td colspan="7"><div class="empty">No notices match your filters.</div></td></tr>`;
+      }
+
+      function renderCards() {
+        el.cardList.innerHTML = state.filtered.length ? state.filtered.map((job, index) => `
+          <article class="card ${index === state.selectedIndex ? "active" : ""}" data-index="${index}">
+            <h3>${escapeHtml(job.title || "Untitled")}</h3>
+            <div class="meta-row">
+              <span class="badge source">${escapeHtml(job.source || "Source")}</span>
+              <span class="badge">${escapeHtml(job.location || "Location not parsed")}</span>
+              <span class="badge ${daysUntil(job.deadline) <= 2 ? "alert" : "ok"}">${escapeHtml(normalizeDate(job.deadline) || "No deadline")}</span>
+            </div>
+          </article>
+        `).join("") : `<div class="empty">No notices match your filters.</div>`;
+      }
+
+      function renderPreview() {
+        const job = state.filtered[state.selectedIndex];
+        if (!job) {
+          el.preview.innerHTML = `<div class="empty">Select a notice to preview details.</div>`;
+          return;
+        }
+        const shareText = encodeURIComponent(`${job.title}\n${job.url}`);
+        el.preview.innerHTML = `
+          <h2>${escapeHtml(job.title || "Untitled")}</h2>
+          <div class="meta-row">
+            <span class="badge source">${escapeHtml(sourceBadge(job))}</span>
+            <span class="badge">${escapeHtml(job.organization || job.source || "Unknown")}</span>
+            <span class="badge">${escapeHtml(job.job_type || "job")}</span>
+            <span class="badge">${escapeHtml(job.category || "general")}</span>
+          </div>
+          <div class="summary-grid">
+            <div class="summary-item"><strong>Age Limit</strong>${escapeHtml(parsedMetric(job, "Age Limit"))}</div>
+            <div class="summary-item"><strong>Application Fees</strong>${escapeHtml(parsedMetric(job, "Application Fees"))}</div>
+            <div class="summary-item"><strong>Required Education</strong>${escapeHtml(parsedMetric(job, "Required Education"))}</div>
+            <div class="summary-item"><strong>Final Deadline</strong>${escapeHtml(parsedMetric(job, "Final Deadline"))}</div>
+          </div>
+          <p>${escapeHtml(job.summary || job.description || "No parsed summary available. Open the official notice for complete eligibility and application details.")}</p>
+          <div class="toolbar">
+            <div class="actions">
+              <a href="${escapeAttr(job.url)}" target="_blank" rel="noreferrer"><button type="button">Open Official Link</button></a>
+              <button class="secondary" type="button" data-copy="${escapeAttr(job.url)}">Copy Link</button>
+              <a href="https://wa.me/?text=${shareText}" target="_blank" rel="noreferrer"><button class="secondary" type="button">WhatsApp</button></a>
+              <a href="https://t.me/share/url?url=${encodeURIComponent(job.url)}&text=${encodeURIComponent(job.title)}" target="_blank" rel="noreferrer"><button class="secondary" type="button">Telegram</button></a>
+            </div>
+          </div>
+        `;
+      }
+
+      function render() {
+        renderStatus();
+        renderHorizon();
+        renderTable();
+        renderCards();
+        renderPreview();
+        el.tableView.classList.toggle("hidden", state.view !== "table");
+        el.splitView.classList.toggle("hidden", state.view !== "split");
+      }
+
+      function saveHorizon() {
+        localStorage.setItem("horizonFilters", JSON.stringify({
+          keyword: el.keyword.value,
+          location: el.location.value,
+          sector: el.sector.value,
+          remote: el.remote.checked,
+          deadlineSoon: el.deadlineSoon.checked,
+          pdf: el.pdf.checked,
+        }));
+        renderHorizon();
+      }
+
+      function generateFeed() {
+        const params = new URLSearchParams({
+          keyword: el.keyword.value,
+          location: el.location.value,
+          sector: el.sector.value,
+          remote: String(el.remote.checked),
+          pdf: String(el.pdf.checked),
+        });
+        const url = `${location.origin}${location.pathname}?${params.toString()}`;
+        navigator.clipboard?.writeText(url);
+        alert("Filter webfeed link copied. Static GitHub Pages cannot emit true RSS without a backend, but this URL reopens the same live filtered board.");
+      }
+
+      function selectIndex(index) {
+        if (!state.filtered.length) return;
+        state.selectedIndex = Math.max(0, Math.min(index, state.filtered.length - 1));
+        render();
+        document.querySelector(`[data-index="${state.selectedIndex}"]`)?.scrollIntoView({ block: "nearest" });
+      }
+
+      function escapeHtml(value) {
+        return String(value || "").replace(/[&<>"']/g, (char) => ({
+          "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;",
+        })[char]);
+      }
+
+      function escapeAttr(value) {
+        return escapeHtml(value).replace(/`/g, "&#096;");
+      }
+
+      async function init() {
+        const params = new URLSearchParams(location.search);
+        for (const [key, input] of [["keyword", el.keyword], ["location", el.location], ["sector", el.sector]]) {
+          if (params.has(key)) input.value = params.get(key) || "";
+        }
+        if (params.has("remote")) el.remote.checked = params.get("remote") === "true";
+        if (params.has("pdf")) el.pdf.checked = params.get("pdf") === "true";
+
+        try {
+          const response = await fetch("data/jobs.json", { cache: "no-store" });
+          state.data = await response.json();
+        } catch (error) {
+          state.data = { jobs: [], sources: [], stats: [], generated_at: null, errors: [] };
+        }
+        applyFilters();
+      }
+
+      [el.keyword, el.location, el.sector, el.remote, el.deadlineSoon, el.pdf].forEach((input) => {
+        input.addEventListener("input", () => { saveHorizon(); applyFilters(); });
+        input.addEventListener("change", () => { saveHorizon(); applyFilters(); });
+      });
+      el.setHorizon.addEventListener("click", saveHorizon);
+      el.rss.addEventListener("click", generateFeed);
+      el.theme.addEventListener("click", () => {
+        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem("theme", next);
+      });
+      el.tableButton.addEventListener("click", () => { state.view = "table"; localStorage.setItem("view", state.view); render(); });
+      el.splitButton.addEventListener("click", () => { state.view = "split"; localStorage.setItem("view", state.view); render(); });
+      document.addEventListener("click", (event) => {
+        const row = event.target.closest("[data-index]");
+        if (row) selectIndex(Number(row.dataset.index));
+        const copyButton = event.target.closest("[data-copy]");
+        if (copyButton) navigator.clipboard?.writeText(copyButton.dataset.copy);
+      });
+      document.addEventListener("keydown", (event) => {
+        if (["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement.tagName)) return;
+        if (event.key.toLowerCase() === "j") selectIndex(state.selectedIndex + 1);
+        if (event.key.toLowerCase() === "k") selectIndex(state.selectedIndex - 1);
+        if (event.key.toLowerCase() === "o") {
+          const job = state.filtered[state.selectedIndex];
+          if (job?.url) window.open(job.url, "_blank", "noopener,noreferrer");
+        }
+      });
+
+      init();
+    </script>
+  </body>
+</html>
         display: grid;
         gap: 7px;
         color: #dbeafe;
