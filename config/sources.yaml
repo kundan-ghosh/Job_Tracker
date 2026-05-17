@@ -139,7 +139,17 @@ sources:
       - jrf
 
   - name: "Jadavpur University"
-    url: "https://jadavpuruniversity.in"
+    url: "https://jadavpuruniversity.in/notifications/"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - notice
+      - pdf
+ 
+  - name: " Ramakrishna Mission"
+    url: "https://rkmvu.ac.in/category/careers/"
     category: "research"
     freshness_days: 60
     include_patterns:
@@ -159,28 +169,6 @@ sources:
       - notification
       - scientist
 
-  - name: "DRDO Recruitment"
-    url: "https://www.drdo.gov.in/recruitment"
-    category: "government"
-    freshness_days: 90
-    include_patterns:
-      - recruitment
-      - vacancy
-      - notification
-      - pdf
-      - scientist
-
-  - name: "CDAC Jobs"
-    url: "https://www.cdac.in/index.aspx?id=jobs"
-    category: "government"
-    freshness_days: 60
-    include_patterns:
-      - recruitment
-      - vacancy
-      - engineer
-      - scientist
-      - project
-
   - name: "CSIR India"
     url: "https://www.csir.res.in/opportunities"
     category: "government"
@@ -191,16 +179,6 @@ sources:
       - jrf
       - srf
       - project
-      - pdf
-
-  - name: "SERB India"
-    url: "https://www.serb.gov.in/opportunities.php"
-    category: "government"
-    freshness_days: 90
-    include_patterns:
-      - project
-      - fellowship
-      - recruitment
       - pdf
 
   - name: "Internshala ML"
@@ -223,28 +201,6 @@ sources:
       - python
       - internship
       - machine learning
-
-  - name: "Pixxel Careers"
-    url: "https://pixxel.space/careers"
-    category: "tech"
-    freshness_days: 30
-    include_patterns:
-      - machine learning
-      - data
-      - engineer
-      - scientist
-      - remote sensing
-
-  - name: "SatSure Careers"
-    url: "https://satsure.co/careers"
-    category: "tech"
-    freshness_days: 30
-    include_patterns:
-      - machine learning
-      - data
-      - geospatial
-      - remote sensing
-      - engineer
 
   - name: "FreeJobAlert Research"
     url: "https://www.freejobalert.com/government-jobs/research-scientist-jobs"
@@ -288,13 +244,3 @@ sources:
       - intern
       - fellowship
       - machine learning
-
-  - name: "Fractal Analytics"
-    url: "https://fractal.ai/careers"
-    category: "tech"
-    freshness_days: 30
-    include_patterns:
-      - data science
-      - machine learning
-      - engineer
-      - analyst
