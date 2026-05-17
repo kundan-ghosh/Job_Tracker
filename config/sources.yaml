@@ -1,0 +1,300 @@
+candidate:
+  include_keywords:
+    - machine learning
+    - deep learning
+    - computer vision
+    - change detection
+    - remote sensing
+    - pytorch
+    - python
+    - data science
+    - jrf
+    - srf
+    - research associate
+    - project associate
+    - internship
+    - fellowship
+  resume_keywords:
+    - transformer
+    - lora
+    - neural network
+    - image processing
+    - satellite
+    - geospatial
+    - statistics
+    - linear algebra
+  location_keywords:
+    - india
+    - kolkata
+    - west bengal
+    - kharagpur
+    - bangalore
+    - bengaluru
+    - remote
+  exclude_keywords:
+    - senior professor
+    - 10 years experience
+    - phd required
+  minimum_score: 1
+
+sources:
+  - name: "ISI Kolkata"
+    url: "https://www.isical.ac.in/jobs"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - jrf
+      - srf
+      - project
+      - pdf
+      - notice
+
+  - name: "IIT Kharagpur SRIC"
+    url: "https://erp.iitkgp.ac.in/SRICStaffRecruitment/Advertise.jsp"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - jrf
+      - srf
+      - pdf
+
+  - name: "IISc Bangalore"
+    url: "https://iisc.ac.in/opportunities"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - research
+      - project
+      - fellowship
+      - pdf
+
+  - name: "IIT Bombay"
+    url: "https://www.iitb.ac.in/en/careers"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - jrf
+      - project
+      - pdf
+
+  - name: "IIT Delhi"
+    url: "https://home.iitd.ac.in/jobs-iitd.php"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - jrf
+      - project
+      - vacancy
+      - pdf
+
+  - name: "IIT Kanpur"
+    url: "https://www.iitk.ac.in/new/jobs"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - jrf
+      - project
+      - vacancy
+
+  - name: "IIT Roorkee"
+    url: "https://iitr.ac.in/sections/sdo/recruitment"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - jrf
+      - project
+      - pdf
+
+  - name: "IISER Kolkata"
+    url: "https://www.iiserkol.ac.in/web/en/announcements/job-vacancies"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - vacancy
+      - recruitment
+      - jrf
+      - project
+      - pdf
+
+  - name: "NIT Durgapur"
+    url: "https://nitdgp.ac.in"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - project
+      - jrf
+
+  - name: "Jadavpur University"
+    url: "https://jadavpuruniversity.in"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - notice
+      - pdf
+
+  - name: "ISRO Careers"
+    url: "https://www.isro.gov.in/careers"
+    category: "government"
+    freshness_days: 90
+    include_patterns:
+      - recruitment
+      - vacancy
+      - pdf
+      - notification
+      - scientist
+
+  - name: "DRDO Recruitment"
+    url: "https://www.drdo.gov.in/recruitment"
+    category: "government"
+    freshness_days: 90
+    include_patterns:
+      - recruitment
+      - vacancy
+      - notification
+      - pdf
+      - scientist
+
+  - name: "CDAC Jobs"
+    url: "https://www.cdac.in/index.aspx?id=jobs"
+    category: "government"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - engineer
+      - scientist
+      - project
+
+  - name: "CSIR India"
+    url: "https://www.csir.res.in/opportunities"
+    category: "government"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - jrf
+      - srf
+      - project
+      - pdf
+
+  - name: "SERB India"
+    url: "https://www.serb.gov.in/opportunities.php"
+    category: "government"
+    freshness_days: 90
+    include_patterns:
+      - project
+      - fellowship
+      - recruitment
+      - pdf
+
+  - name: "Internshala ML"
+    url: "https://internshala.com/internships/machine-learning-internship"
+    category: "internship"
+    freshness_days: 14
+    include_patterns:
+      - machine learning
+      - data science
+      - python
+      - deep learning
+      - internship
+
+  - name: "Internshala Data Science"
+    url: "https://internshala.com/internships/data-science-internship"
+    category: "internship"
+    freshness_days: 14
+    include_patterns:
+      - data science
+      - python
+      - internship
+      - machine learning
+
+  - name: "Pixxel Careers"
+    url: "https://pixxel.space/careers"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - machine learning
+      - data
+      - engineer
+      - scientist
+      - remote sensing
+
+  - name: "SatSure Careers"
+    url: "https://satsure.co/careers"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - machine learning
+      - data
+      - geospatial
+      - remote sensing
+      - engineer
+
+  - name: "FreeJobAlert Research"
+    url: "https://www.freejobalert.com/government-jobs/research-scientist-jobs"
+    category: "government"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - scientist
+      - jrf
+      - fellowship
+      - data
+
+  - name: "FacultyTub JRF"
+    url: "https://www.facultytub.com/category/jrf-srf"
+    category: "research"
+    freshness_days: 21
+    include_patterns:
+      - jrf
+      - srf
+      - machine learning
+      - data science
+      - computer science
+
+  - name: "Google Research India"
+    url: "https://research.google/careers"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - engineer
+      - scientist
+      - machine learning
+      - india
+
+  - name: "Microsoft Research India"
+    url: "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/opportunities"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - intern
+      - fellowship
+      - machine learning
+
+  - name: "Fractal Analytics"
+    url: "https://fractal.ai/careers"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - data science
+      - machine learning
+      - engineer
+      - analyst
