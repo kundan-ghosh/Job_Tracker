@@ -481,7 +481,7 @@ def main() -> int:
     parser.add_argument("--sources", default="config/sources.yaml")
     parser.add_argument("--profile", default="config/profile.yaml")
     parser.add_argument("--output", default="docs/data/jobs.json")
-    parser.add_argument("--max-sources", type=int, default=25, help="Maximum sources to scrape in one run. Use 0 for all.")
+    parser.add_argument("--max-sources", type=int, default=50, help="Maximum sources to scrape in one run. Use 0 for all.")
     args = parser.parse_args()
 
     source_path = Path(args.sources)
