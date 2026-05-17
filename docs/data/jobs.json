@@ -1,7 +1,635 @@
 {
-  "generated_at": null,
-  "sources": [],
-  "jobs": [],
-  "stats": [],
-  "errors": []
+  "generated_at": "2026-05-17T17:45:28.781730+00:00",
+  "configured_source_count": 24,
+  "scraped_source_count": 15,
+  "excluded_categories": [
+    "job-portal"
+  ],
+  "sources": [
+    {
+      "name": "ISI Kolkata",
+      "url": "https://www.isical.ac.in/jobs",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "IIT Kharagpur SRIC",
+      "url": "https://erp.iitkgp.ac.in/SRICStaffRecruitment/Advertise.jsp",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "IISc Bangalore",
+      "url": "https://iisc.ac.in/opportunities",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "IIT Bombay",
+      "url": "https://www.iitb.ac.in/en/careers",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "IIT Delhi",
+      "url": "https://home.iitd.ac.in/jobs-iitd.php",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "IIT Kanpur",
+      "url": "https://www.iitk.ac.in/new/jobs",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "IIT Roorkee",
+      "url": "https://iitr.ac.in/sections/sdo/recruitment",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "IISER Kolkata",
+      "url": "https://www.iiserkol.ac.in/web/en/announcements/job-vacancies",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "NIT Durgapur",
+      "url": "https://nitdgp.ac.in",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "Jadavpur University",
+      "url": "https://jadavpuruniversity.in",
+      "freshness_days": 60,
+      "category": "research",
+      "search_urls": []
+    },
+    {
+      "name": "ISRO Careers",
+      "url": "https://www.isro.gov.in/careers",
+      "freshness_days": 90,
+      "category": "government",
+      "search_urls": []
+    },
+    {
+      "name": "DRDO Recruitment",
+      "url": "https://www.drdo.gov.in/recruitment",
+      "freshness_days": 90,
+      "category": "government",
+      "search_urls": []
+    },
+    {
+      "name": "CDAC Jobs",
+      "url": "https://www.cdac.in/index.aspx?id=jobs",
+      "freshness_days": 60,
+      "category": "government",
+      "search_urls": []
+    },
+    {
+      "name": "CSIR India",
+      "url": "https://www.csir.res.in/opportunities",
+      "freshness_days": 60,
+      "category": "government",
+      "search_urls": []
+    },
+    {
+      "name": "SERB India",
+      "url": "https://www.serb.gov.in/opportunities.php",
+      "freshness_days": 90,
+      "category": "government",
+      "search_urls": []
+    }
+  ],
+  "jobs": [
+    {
+      "id": "41e10bcbe17ec8e1",
+      "source": "IIT Delhi",
+      "organization": "IIT Delhi",
+      "title": "Latest Issue: Apr-26",
+      "url": "https://home.iitd.ac.in/uploads/Newsletter-Apr-26-Issue.pdf",
+      "score": 17,
+      "matched_keywords": [
+        "ai",
+        "data",
+        "india",
+        "intern",
+        "machine learning",
+        "opening",
+        "position",
+        "remote",
+        "research"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "pdf",
+      "summary": "Latest Issue: Apr-26 News Updates Industrial Research and Development Research & Innovation International Connect Awards & Achievements Alumni Relations Corporate Relations Continuing Education Programme TABLE OF CONTENTS 1 10 5 12 16 7 13 18 News Updates QS Subject Rankings 2026: IIT Delhi No.1 Indian Institute in",
+      "description": "Latest Issue: Apr-26 News Updates Industrial Research and Development Research & Innovation International Connect Awards & Achievements Alumni Relations Corporate Relations Continuing Education Programme TABLE OF CONTENTS 1 10 5 12 16 7 13 18 News Updates QS Subject Rankings 2026: IIT Delhi No.1 Indian Institute in",
+      "location": "Bengaluru, Delhi, India, New Delhi",
+      "job_type": "internship",
+      "salary": "",
+      "source_id": "d30f20b59e34987c",
+      "is_pdf": true,
+      "pdf_url": "https://home.iitd.ac.in/uploads/Newsletter-Apr-26-Issue.pdf",
+      "tags": [
+        "ai",
+        "data",
+        "india",
+        "intern",
+        "machine learning",
+        "opening",
+        "position",
+        "remote",
+        "research"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-17T17:45:08.975094+00:00"
+    },
+    {
+      "id": "f4e20738efc77289",
+      "source": "IISER Kolkata",
+      "organization": "IISER Kolkata",
+      "title": "Recruitment",
+      "url": "https://www.iiserkol.ac.in/web/footer-content/recruitment",
+      "score": 12,
+      "matched_keywords": [
+        "ai",
+        "india",
+        "intern",
+        "kolkata",
+        "project",
+        "recruitment",
+        "research"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Recruitment IISER Kolkata | Home ভারতীয় বিজ্ঞান শিক্ষা এবং গবেষণা প্রতিষ্ঠান কলকাতা भारतीय विज्ञान शिक्षा एवं अनुसंधान संस्थान कोलकाता INDIAN INSTITUTE OF SCIENCE EDUCATION AND RESEARCH KOLKATA Students Student's Brochure Students Affairs Council (SAC) Placement E-Cell Inquivesta Alumni Anti ragging Awards and",
+      "description": "Recruitment IISER Kolkata | Home ভারতীয় বিজ্ঞান শিক্ষা এবং গবেষণা প্রতিষ্ঠান কলকাতা भारतीय विज्ञान शिक्षा एवं अनुसंधान संस्थान कोलकाता INDIAN INSTITUTE OF SCIENCE EDUCATION AND RESEARCH KOLKATA Students Student's Brochure Students Affairs Council (SAC) Placement E-Cell Inquivesta Alumni Anti ragging Awards and",
+      "location": "India, Kolkata",
+      "job_type": "internship",
+      "salary": "",
+      "source_id": "75b9e971d29d0118",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "india",
+        "intern",
+        "kolkata",
+        "project",
+        "recruitment",
+        "research"
+      ],
+      "experience": "",
+      "category": "research",
+      "checked_at": "2026-05-17T17:45:13.926602+00:00"
+    },
+    {
+      "id": "97f1cad7a0dc48da",
+      "source": "IISc Bangalore",
+      "organization": "IISc Bangalore",
+      "title": "Prof. S. K. Chatterjee Award for Outstanding Woman Researcher or Industry Leader",
+      "url": "https://www.iisc.ac.in/prof-s-k-chatterjee-award/",
+      "score": 11,
+      "matched_keywords": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Prof. S. K. Chatterjee Award for Outstanding Woman Researcher or Industry Leader Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration",
+      "description": "Prof. S. K. Chatterjee Award for Outstanding Woman Researcher or Industry Leader Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration",
+      "location": "Bengaluru, Chennai, Delhi, India",
+      "job_type": "internship",
+      "salary": "Rs. 40,000",
+      "source_id": "c879075e408aa65f",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-17T17:44:58.785486+00:00"
+    },
+    {
+      "id": "d7dbfdf6aa36e1dc",
+      "source": "IISc Bangalore",
+      "organization": "IISc Bangalore",
+      "title": "Prof. Rustom Choksi Award",
+      "url": "https://iisc.ac.in/institute-awards/prof-rustom-choksi-award-for-excellence-in-research-in-scienceengineering/",
+      "score": 11,
+      "matched_keywords": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Prof. Rustom Choksi Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar",
+      "description": "Prof. Rustom Choksi Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar",
+      "location": "Bengaluru, India",
+      "job_type": "internship",
+      "salary": "Rs.20,000",
+      "source_id": "c879075e408aa65f",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-17T17:44:59.834262+00:00"
+    },
+    {
+      "id": "0b32104b1571c951",
+      "source": "IISc Bangalore",
+      "organization": "IISc Bangalore",
+      "title": "Alumni Award",
+      "url": "https://iisc.ac.in/institute-awards/alumni-award-for-excellence-in-research-in-scienceengineering/",
+      "score": 11,
+      "matched_keywords": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Alumni Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar Financial",
+      "description": "Alumni Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar Financial",
+      "location": "Bengaluru, India",
+      "job_type": "internship",
+      "salary": "Rs.20,000",
+      "source_id": "c879075e408aa65f",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-17T17:44:59.911008+00:00"
+    },
+    {
+      "id": "329239be77d0a088",
+      "source": "IISc Bangalore",
+      "organization": "IISc Bangalore",
+      "title": "Scheme, Regulations, Bye-laws",
+      "url": "https://iisc.ac.in/wp-content/uploads/2023/01/SRB-amended-up-to-Dec_2018.pdf",
+      "score": 9,
+      "matched_keywords": [
+        "ai",
+        "fellowship",
+        "india",
+        "research",
+        "trainee"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "pdf",
+      "summary": "Scheme, Regulations, Bye-laws INDIAN INSTITUTE OF SCIENCE BANGALORE - 560 012 SCHEME Approved by the Government of India REGULATIONS Approved by the Visitor and BY E-LAWS Framed by the Council of the Institute Effective from 22nd May 1967 (All amendments up to December 2018 incorporated) CONTENTS Page No. SCHEME",
+      "description": "Scheme, Regulations, Bye-laws INDIAN INSTITUTE OF SCIENCE BANGALORE - 560 012 SCHEME Approved by the Government of India REGULATIONS Approved by the Visitor and BY E-LAWS Framed by the Council of the Institute Effective from 22nd May 1967 (All amendments up to December 2018 incorporated) CONTENTS Page No. SCHEME",
+      "location": "Bengaluru, Delhi, India, New Delhi",
+      "job_type": "fellowship",
+      "salary": "",
+      "source_id": "c879075e408aa65f",
+      "is_pdf": true,
+      "pdf_url": "https://iisc.ac.in/wp-content/uploads/2023/01/SRB-amended-up-to-Dec_2018.pdf",
+      "tags": [
+        "ai",
+        "fellowship",
+        "india",
+        "research",
+        "trainee"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-17T17:45:00.409866+00:00"
+    },
+    {
+      "id": "bee3000eb065991a",
+      "source": "NIT Durgapur",
+      "organization": "NIT Durgapur",
+      "title": "| NIT Durgapur",
+      "url": "https://nitdgp.ac.in",
+      "score": 9,
+      "matched_keywords": [
+        "ai",
+        "india",
+        "intern",
+        "kolkata",
+        "research",
+        "west bengal"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "| NIT Durgapur | NIT Durgapur Home NIRF Chanakya ERP Samarth NITD at a glance Viksit Bharat @2047 Mail Contacts हिंदी में Latest News Screening status of received applications of Non-Teaching posts will be displayed shortly on our web page . MSW admission Brochure 2026 MBA admission Brochure 2026 NIT Durgapur ranked",
+      "description": "| NIT Durgapur | NIT Durgapur Home NIRF Chanakya ERP Samarth NITD at a glance Viksit Bharat @2047 Mail Contacts हिंदी में Latest News Screening status of received applications of Non-Teaching posts will be displayed shortly on our web page . MSW admission Brochure 2026 MBA admission Brochure 2026 NIT Durgapur ranked",
+      "location": "India, Kolkata",
+      "job_type": "internship",
+      "salary": "51 LPA",
+      "source_id": "0702eab5494d2c86",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "india",
+        "intern",
+        "kolkata",
+        "research",
+        "west bengal"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-17T17:45:17.487564+00:00"
+    },
+    {
+      "id": "03c274cdebd12db1",
+      "source": "CDAC Jobs",
+      "organization": "CDAC Jobs",
+      "title": "Error",
+      "url": "https://www.cdac.in/index.aspx?id=jobs",
+      "score": 6,
+      "matched_keywords": [
+        "ai",
+        "india",
+        "kolkata",
+        "software"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Error Error AIRAWAT-PSAI Techzine - C-DAC R&D Digest TAP - Technology Advancement and Proliferation Skip to navigation | Skip to main content | English | Hindi Search Button EN हिं About Us Products & Services R&D Alliance Tenders / EOI EXPRESSION OF INTEREST Careers Contact Us Thematic Area High Performance Computing",
+      "description": "Error Error AIRAWAT-PSAI Techzine - C-DAC R&D Digest TAP - Technology Advancement and Proliferation Skip to navigation | Skip to main content | English | Hindi Search Button EN हिं About Us Products & Services R&D Alliance Tenders / EOI EXPRESSION OF INTEREST Careers Contact Us Thematic Area High Performance Computing",
+      "location": "Bengaluru, Chennai, Delhi, Hyderabad",
+      "job_type": "job",
+      "salary": "",
+      "source_id": "b3003d12cc7140ed",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "india",
+        "kolkata",
+        "software"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-17T17:45:25.373673+00:00"
+    },
+    {
+      "id": "28734bab742b0bbf",
+      "source": "IISc Bangalore",
+      "organization": "IISc Bangalore",
+      "title": "Telephone Directory",
+      "url": "https://iisc.ac.in/wp-content/uploads/2025/04/Directory-Planner_2024-25.pdf",
+      "score": 2,
+      "matched_keywords": [
+        "ai"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "pdf",
+      "summary": "Telephone Directory DirectoryPla/uniE011er 2024-2025 & Security.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5555/2400/2225 Security (Vijnanapura) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2032 Health Center/Ambulance 4444/8147665421/",
+      "description": "Telephone Directory DirectoryPla/uniE011er 2024-2025 & Security.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5555/2400/2225 Security (Vijnanapura) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2032 Health Center/Ambulance 4444/8147665421/",
+      "location": "",
+      "job_type": "faculty",
+      "salary": "rs 2506",
+      "source_id": "c879075e408aa65f",
+      "is_pdf": true,
+      "pdf_url": "https://iisc.ac.in/wp-content/uploads/2025/04/Directory-Planner_2024-25.pdf",
+      "tags": [
+        "ai"
+      ],
+      "experience": "",
+      "category": "tech",
+      "checked_at": "2026-05-17T17:45:00.621006+00:00"
+    }
+  ],
+  "errors": [
+    {
+      "source": "ISI Kolkata",
+      "url": "https://www.isical.ac.in/jobs",
+      "error": "HTTPSConnectionPool(host='www.isical.ac.in', port=443): Max retries exceeded with url: /jobs (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.isical.ac.in', port=443) at 0x7f7aadb188d0>, 'Connection to www.isical.ac.in timed out. (connect timeout=8)'))"
+    },
+    {
+      "source": "IIT Kharagpur SRIC",
+      "url": "javaScript:void(0);",
+      "error": "No connection adapters were found for 'javaScript:void(0);'"
+    },
+    {
+      "source": "IISc Bangalore",
+      "url": "https://iisc.ac.in/wp-content/uploads/2021/09/IISc-medium-of-instruction-certificate.pdf",
+      "error": "cryptography>=3.1 is required for AES algorithm"
+    },
+    {
+      "source": "IISc Bangalore",
+      "url": "https://iisc.ac.in/wp-content/uploads/2021/10/IISc-status-signed.pdf",
+      "error": "cryptography>=3.1 is required for AES algorithm"
+    },
+    {
+      "source": "IISc Bangalore",
+      "url": "https://iisc.ac.in/wp-content/uploads/2022/02/IISc_Migration_TC_generic_certificate_signed.pdf",
+      "error": "cryptography>=3.1 is required for AES algorithm"
+    },
+    {
+      "source": "IISc Bangalore",
+      "url": "https://iisc.ac.in/wp-content/uploads/2021/10/IISc-CGPA-Percentage-Conversion-notification-signed.pdf",
+      "error": "cryptography>=3.1 is required for AES algorithm"
+    },
+    {
+      "source": "IIT Bombay",
+      "url": "https://www.iitb.ac.in/en/careers",
+      "error": "404 Client Error: Not Found for url: https://www.iitb.ac.in/en/careers"
+    },
+    {
+      "source": "IIT Delhi",
+      "url": "https://ird.iitd.ac.in/IRD/IITIRDManualRev5.pdf",
+      "error": "HTTPSConnectionPool(host='ird.iitd.ac.in', port=443): Max retries exceeded with url: /IRD/IITIRDManualRev5.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))"
+    },
+    {
+      "source": "IIT Kanpur",
+      "url": "https://www.iitk.ac.in/new/jobs",
+      "error": "404 Client Error: Not Found for url: https://www.iitk.ac.in/new/jobs"
+    },
+    {
+      "source": "IIT Roorkee",
+      "url": "https://iitr.ac.in/sections/sdo/recruitment",
+      "error": "404 Client Error: Not Found for url: https://iitr.ac.in/sections/sdo/recruitment"
+    },
+    {
+      "source": "Jadavpur University",
+      "url": "https://jadavpuruniversity.in",
+      "error": "HTTPSConnectionPool(host='jadavpuruniversity.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))"
+    },
+    {
+      "source": "ISRO Careers",
+      "url": "https://www.isro.gov.in/careers",
+      "error": "404 Client Error: Not Found for url: https://www.isro.gov.in/careers"
+    },
+    {
+      "source": "DRDO Recruitment",
+      "url": "https://www.drdo.gov.in/recruitment",
+      "error": "404 Client Error: Not Found for url: https://www.drdo.gov.in/recruitment"
+    },
+    {
+      "source": "CSIR India",
+      "url": "https://www.csir.res.in/opportunities",
+      "error": "404 Client Error: Not Found for url: https://www.csir.res.in/opportunities"
+    },
+    {
+      "source": "SERB India",
+      "url": "https://www.serb.gov.in/opportunities.php",
+      "error": "HTTPSConnectionPool(host='www.serb.gov.in', port=443): Max retries exceeded with url: /opportunities.php (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.serb.gov.in'. (_ssl.c:1016)\")))"
+    }
+  ],
+  "stats": [
+    {
+      "source": "ISI Kolkata",
+      "url": "https://www.isical.ac.in/jobs",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "IIT Kharagpur SRIC",
+      "url": "https://erp.iitkgp.ac.in/SRICStaffRecruitment/Advertise.jsp",
+      "candidates": 1,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "IISc Bangalore",
+      "url": "https://iisc.ac.in/opportunities",
+      "candidates": 10,
+      "matches": 5,
+      "errors": 4
+    },
+    {
+      "source": "IIT Bombay",
+      "url": "https://www.iitb.ac.in/en/careers",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "IIT Delhi",
+      "url": "https://home.iitd.ac.in/jobs-iitd.php",
+      "candidates": 2,
+      "matches": 1,
+      "errors": 1
+    },
+    {
+      "source": "IIT Kanpur",
+      "url": "https://www.iitk.ac.in/new/jobs",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "IIT Roorkee",
+      "url": "https://iitr.ac.in/sections/sdo/recruitment",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "IISER Kolkata",
+      "url": "https://www.iiserkol.ac.in/web/en/announcements/job-vacancies",
+      "candidates": 2,
+      "matches": 1,
+      "errors": 0
+    },
+    {
+      "source": "NIT Durgapur",
+      "url": "https://nitdgp.ac.in",
+      "candidates": 1,
+      "matches": 1,
+      "errors": 0
+    },
+    {
+      "source": "Jadavpur University",
+      "url": "https://jadavpuruniversity.in",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "ISRO Careers",
+      "url": "https://www.isro.gov.in/careers",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "DRDO Recruitment",
+      "url": "https://www.drdo.gov.in/recruitment",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "CDAC Jobs",
+      "url": "https://www.cdac.in/index.aspx?id=jobs",
+      "candidates": 1,
+      "matches": 1,
+      "errors": 0
+    },
+    {
+      "source": "CSIR India",
+      "url": "https://www.csir.res.in/opportunities",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    },
+    {
+      "source": "SERB India",
+      "url": "https://www.serb.gov.in/opportunities.php",
+      "candidates": 0,
+      "matches": 0,
+      "errors": 1
+    }
+  ]
 }
