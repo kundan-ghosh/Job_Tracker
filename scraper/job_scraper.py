@@ -377,7 +377,12 @@ def summarize(text: str, max_chars: int = 320) -> str:
     return cleaned[:max_chars].rsplit(" ", 1)[0] if len(cleaned) > max_chars else cleaned
 
 
-def scrape_source(session: requests.Session, source: Source, profile: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, str]], dict[str, Any]]:
+def scrape_source(
+    session: requests.Session,
+    source: Source,
+    profile: dict[str, Any],
+    max_links: int,
+) -> tuple[list[dict[str, Any]], list[dict[str, str]], dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
     errors: list[dict[str, str]] = []
     stats: dict[str, Any] = {
@@ -406,7 +411,7 @@ def scrape_source(session: requests.Session, source: Source, profile: dict[str, 
         link
         for link in links
         if not (link["url"] in seen_link_urls or seen_link_urls.add(link["url"]))
-    ][:100]
+    ][:max_links]
     stats["candidates"] = len(links)
     for link in links:
         try:
@@ -481,7 +486,9 @@ def main() -> int:
     parser.add_argument("--sources", default="config/sources.yaml")
     parser.add_argument("--profile", default="config/profile.yaml")
     parser.add_argument("--output", default="docs/data/jobs.json")
-    parser.add_argument("--max-sources", type=int, default=50, help="Maximum sources to scrape in one run. Use 0 for all.")
+    parser.add_argument("--max-sources", type=int, default=25, help="Maximum sources to scrape in one run. Use 0 for all.")
+    parser.add_argument("--max-links-per-source", type=int, default=20, help="Maximum candidate notice links to inspect per source.")
+    parser.add_argument("--exclude-categories", default="", help="Comma-separated source categories to skip.")
     args = parser.parse_args()
 
     source_path = Path(args.sources)
@@ -495,6 +502,17 @@ def main() -> int:
     profile = load_yaml(profile_path)
     sources = parse_sources(sources_config)
     configured_source_count = len(sources)
+    excluded_categories = {
+        category.strip().lower()
+        for category in args.exclude_categories.split(",")
+        if category.strip()
+    }
+    if excluded_categories:
+        sources = [
+            source
+            for source in sources
+            if source.category.lower() not in excluded_categories
+        ]
     if args.max_sources > 0:
         sources = sources[: args.max_sources]
     session = get_session()
@@ -503,7 +521,7 @@ def main() -> int:
     all_errors: list[dict[str, str]] = []
     all_stats: list[dict[str, Any]] = []
     for source in sources:
-        jobs, errors, stats = scrape_source(session, source, profile)
+        jobs, errors, stats = scrape_source(session, source, profile, max_links=args.max_links_per_source)
         all_jobs.extend(jobs)
         all_errors.extend(errors)
         all_stats.append(stats)
@@ -513,6 +531,7 @@ def main() -> int:
         "generated_at": utc_now().isoformat(),
         "configured_source_count": configured_source_count,
         "scraped_source_count": len(sources),
+        "excluded_categories": sorted(excluded_categories),
         "sources": [
             {
                 "name": source.name,
