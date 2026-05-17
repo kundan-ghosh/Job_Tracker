@@ -4,6 +4,7 @@ default_include_patterns: &default_include_patterns
   - career
   - careers
   - recruitment
+  - recruitments
   - vacancy
   - vacancies
   - opening
@@ -13,10 +14,13 @@ default_include_patterns: &default_include_patterns
   - intern
   - fellowship
   - fellowships
+  - scholarship
+  - scholarships
   - opportunity
   - opportunities
   - notice
   - notification
+  - announcement
   - advertisement
   - project
   - position
@@ -26,71 +30,521 @@ default_include_patterns: &default_include_patterns
   - pdf
 
 sources:
-  - name: "IIT Kharagpur"
-    url: "https://iitkgp.ac.in/career"
+  - name: "Naukri.com"
+    url: "https://www.naukri.com"
     type: "auto"
-    category: "research"
-    freshness_days: 90
+    category: "indian_portal"
+    freshness_days: 14
     include_patterns: *default_include_patterns
 
-  - name: "IIT Delhi"
-    url: "https://home.iitd.ac.in/jobs-iitd.php"
+  - name: "LinkedIn Jobs"
+    url: "https://www.linkedin.com/jobs/"
     type: "auto"
-    category: "research"
-    freshness_days: 90
+    category: "indian_portal"
+    freshness_days: 14
     include_patterns: *default_include_patterns
 
-  - name: "IIT Kanpur"
-    url: "https://iitk.ac.in/new/jobs"
+  - name: "Internshala"
+    url: "https://internshala.com/internships/"
     type: "auto"
-    category: "research"
-    freshness_days: 90
+    category: "indian_portal"
+    freshness_days: 14
     include_patterns: *default_include_patterns
 
-  - name: "IISc Bangalore"
-    url: "https://iisc.ac.in/opportunities"
+  - name: "Indeed India"
+    url: "https://in.indeed.com"
     type: "auto"
-    category: "research"
-    freshness_days: 90
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "Glassdoor"
+    url: "https://www.glassdoor.co.in/Job/index.htm"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "Wellfound"
+    url: "https://wellfound.com/jobs"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "Shine.com"
+    url: "https://www.shine.com"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "Foundit"
+    url: "https://www.foundit.in"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "TimesJobs"
+    url: "https://www.timesjobs.com"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "Hirist"
+    url: "https://www.hirist.tech"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "iimjobs.com"
+    url: "https://www.iimjobs.com"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
+    include_patterns: *default_include_patterns
+
+  - name: "Cutshort"
+    url: "https://cutshort.io/jobs"
+    type: "auto"
+    category: "indian_portal"
+    freshness_days: 14
     include_patterns: *default_include_patterns
 
   - name: "ISRO Careers"
-    url: "https://isro.gov.in/careers"
+    url: "https://www.isro.gov.in/Careers.html"
     type: "auto"
     category: "government"
     freshness_days: 90
     include_patterns: *default_include_patterns
 
-  - name: "DRDO Recruitment"
-    url: "https://drdo.gov.in/recruitment"
+  - name: "DRDO Recruitment RAC"
+    url: "https://rac.gov.in"
+    type: "auto"
+    category: "government"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "DRDO General Vacancies"
+    url: "https://www.drdo.gov.in/drdo/en/offerings/vacancies"
+    type: "auto"
+    category: "government"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "CSIR Labs"
+    url: "https://www.csir.res.in/en/career-opportunities/recruitment/archive-recruitment"
+    type: "auto"
+    category: "government"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "DST India"
+    url: "https://dst.gov.in/announcement/recent-announcements"
     type: "auto"
     category: "government"
     freshness_days: 90
     include_patterns: *default_include_patterns
 
   - name: "C-DAC"
-    url: "https://cdac.in"
+    url: "https://www.cdac.in/index.aspx?id=careers"
     type: "auto"
     category: "government"
     freshness_days: 90
     include_patterns: *default_include_patterns
 
-  - name: "Google Careers"
-    url: "https://careers.google.com"
+  - name: "NIC India"
+    url: "https://www.nic.in/recruitment/"
     type: "auto"
-    category: "tech"
-    freshness_days: 30
-    search_urls:
-      - "https://www.google.com/about/careers/applications/jobs/results/?q=intern&location=India"
-      - "https://www.google.com/about/careers/applications/jobs/results/?q=software&location=India"
+    category: "government"
+    freshness_days: 90
     include_patterns: *default_include_patterns
 
-  - name: "Microsoft Careers"
-    url: "https://careers.microsoft.com"
+  - name: "NIELIT"
+    url: "https://nielit.gov.in/recruitments"
+    type: "auto"
+    category: "government"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "ICAR"
+    url: "https://icar.org.in/vacancy"
+    type: "auto"
+    category: "government"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IIT Kharagpur Temporary Jobs"
+    url: "https://www.iitkgp.ac.in/temporary-jobs"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IIT Kharagpur Faculty Recruitment"
+    url: "https://www.iitkgp.ac.in/fac-recruitment"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IIT Bombay Careers"
+    url: "https://www.iitb.ac.in/en/careers"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IIT Bombay R&D Project Jobs"
+    url: "https://www.ircc.iitb.ac.in/IRCC-Webpage/rnd/JobOpportunities.jsp"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IIT Delhi Jobs"
+    url: "https://home.iitd.ac.in/jobs-iitd.php"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IISc Bangalore Opportunities"
+    url: "https://iisc.ac.in/opportunities/"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "Jadavpur University Recruitments"
+    url: "https://jaduniv.edu.in/recruitments/"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "ISI Kolkata Jobs"
+    url: "https://www.isical.ac.in/jobs"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IISER Kolkata Work With Us"
+    url: "https://www.iiserkol.ac.in/web/en/notices/work-with-us/"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "NIT Durgapur Careers"
+    url: "https://nitdgp.ac.in/p/careers-1"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "IIT Roorkee Recruitment"
+    url: "https://iitr.ac.in/sections/sdo/recruitment/index.html"
+    type: "auto"
+    category: "research"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "Google Careers India"
+    url: "https://www.google.com/about/careers/applications/jobs/results/?location=India"
     type: "auto"
     category: "tech"
     freshness_days: 30
-    search_urls:
-      - "https://careers.microsoft.com/v2/global/en/search?q=internship&lc=India"
-      - "https://careers.microsoft.com/v2/global/en/search?q=software&lc=India"
     include_patterns: *default_include_patterns
+
+  - name: "Microsoft Careers India"
+    url: "https://careers.microsoft.com/v2/global/en/search.html?q=India"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Amazon Jobs India"
+    url: "https://amazon.jobs/en/locations/india"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Meta Careers Gurugram"
+    url: "https://www.metacareers.com/locations/gurugram/?p[location][0]=Gurugram%2C%20India"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "NVIDIA Careers"
+    url: "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite?locationRegionStateProvince=9d6be8e45db0425caee094a11f267a55"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Adobe Research Careers"
+    url: "https://research.adobe.com/careers/"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Qualcomm Careers"
+    url: "https://qualcomm.wd5.myworkdayjobs.com/External"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Samsung R&D India Careers"
+    url: "https://www.samsung.com/in/aboutsamsung/careers/careers-center/"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "TCS Careers India"
+    url: "https://www.tcs.com/careers/india"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Infosys Careers"
+    url: "https://www.infosys.com/careers/job-opportunities.html"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Wipro Careers"
+    url: "https://careers.wipro.com/global-pages/pages/search-jobs"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Mu Sigma Careers"
+    url: "https://www.mu-sigma.com/careers"
+    type: "auto"
+    category: "tech"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Pixxel Careers"
+    url: "https://www.pixxel.space/careers"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "SatSure Careers"
+    url: "https://satsure.co/careers/"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Satyukt Analytics Careers"
+    url: "https://satyukt.com/careers/"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Hugging Face Careers"
+    url: "https://apply.workable.com/huggingface/"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Cohere Careers"
+    url: "https://cohere.com/careers"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Fractal Analytics Careers"
+    url: "https://fractal.ai/careers/"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Sigmoid Careers"
+    url: "https://www.sigmoid.com/careers/"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Ola Krutrim Careers"
+    url: "https://www.olakrutrim.com/careers"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Sarvam AI Careers"
+    url: "https://www.sarvam.ai/careers/"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "CoRover Careers"
+    url: "https://corover.ai/careers/"
+    type: "auto"
+    category: "startup"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "DeepMind Careers"
+    url: "https://deepmind.google/about/careers/"
+    type: "auto"
+    category: "international"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "OpenAI Careers"
+    url: "https://openai.com/careers/"
+    type: "auto"
+    category: "international"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "NASA Internships"
+    url: "https://intern.nasa.gov"
+    type: "auto"
+    category: "international"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "ESA Careers"
+    url: "https://www.esa.int/About_Us/Careers_at_ESA"
+    type: "auto"
+    category: "international"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "DAAD Scholarships"
+    url: "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
+    type: "auto"
+    category: "international"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+
+  - name: "MITACS Globalink"
+    url: "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+    type: "auto"
+    category: "international"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+
+  - name: "Turing Institute"
+    url: "https://www.turing.ac.uk/work-turing"
+    type: "auto"
+    category: "international"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "EPFL Internships"
+    url: "https://www.epfl.ch/education/studies/en/rules-and-procedures/internships/"
+    type: "auto"
+    category: "international"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "ETH Zurich Jobs"
+    url: "https://jobs.ethz.ch"
+    type: "auto"
+    category: "international"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "Max Planck Job Offers"
+    url: "https://www.mpg.de/en/career/job-offers"
+    type: "auto"
+    category: "international"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "Internships.com"
+    url: "https://www.internships.com"
+    type: "auto"
+    category: "international"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "UN Careers"
+    url: "https://careers.un.org"
+    type: "auto"
+    category: "international"
+    freshness_days: 90
+    include_patterns: *default_include_patterns
+
+  - name: "Google Research India"
+    url: "https://research.google/careers/?location=india"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "Microsoft Research India"
+    url: "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/opportunities/"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 30
+    include_patterns: *default_include_patterns
+
+  - name: "PMRF Fellowship"
+    url: "https://pmrf.in"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+
+  - name: "NBHM Fellowships"
+    url: "https://nbhm.dae.gov.in/scholarship.html"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+
+  - name: "SERB Project Positions"
+    url: "https://serb.gov.in/page/whatsnew"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+
+  - name: "DST Ramanujan Fellowship"
+    url: "https://dst.gov.in/scientific-programmes/scientific-engineering-research-fellowship"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+
+  - name: "ICTS Bangalore Opportunities"
+    url: "https://www.icts.res.in/opportunities"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+
+  - name: "Atal Innovation Mission Careers"
+    url: "https://aim.gov.in/careers.php"
+    type: "auto"
+    category: "fellowship"
+    freshness_days: 120
+    include_patterns: *default_include_patterns
+

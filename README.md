@@ -36,6 +36,12 @@ python3 -m http.server 8000 --directory docs
 
 Open `http://localhost:8000`.
 
+By default the scraper checks the first 25 configured sources per run to keep GitHub Actions reliable. To scrape everything locally, run:
+
+```bash
+python scraper/job_scraper.py --max-sources 0
+```
+
 ## Configure sources
 
 Edit `config/sources.yaml`:

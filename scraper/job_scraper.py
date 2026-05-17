@@ -481,6 +481,7 @@ def main() -> int:
     parser.add_argument("--sources", default="config/sources.yaml")
     parser.add_argument("--profile", default="config/profile.yaml")
     parser.add_argument("--output", default="docs/data/jobs.json")
+    parser.add_argument("--max-sources", type=int, default=25, help="Maximum sources to scrape in one run. Use 0 for all.")
     args = parser.parse_args()
 
     source_path = Path(args.sources)
@@ -493,6 +494,9 @@ def main() -> int:
     sources_config = load_yaml(source_path)
     profile = load_yaml(profile_path)
     sources = parse_sources(sources_config)
+    configured_source_count = len(sources)
+    if args.max_sources > 0:
+        sources = sources[: args.max_sources]
     session = get_session()
 
     all_jobs: list[dict[str, Any]] = []
@@ -507,6 +511,8 @@ def main() -> int:
     deduped = {job["id"]: job for job in all_jobs}
     output = {
         "generated_at": utc_now().isoformat(),
+        "configured_source_count": configured_source_count,
+        "scraped_source_count": len(sources),
         "sources": [
             {
                 "name": source.name,
