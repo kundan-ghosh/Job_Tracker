@@ -1,0 +1,50 @@
+sources:
+  - name: "IIT Kharagpur"
+    url: "https://www.iitkgp.ac.in/temporary-jobs"
+    type: "auto"
+    freshness_days: 90
+    include_patterns:
+      - job
+      - recruitment
+      - vacancy
+      - internship
+      - project
+      - temporary
+
+  - name: "Jadavpur University"
+    url: "https://jaduniv.edu.in/"
+    type: "auto"
+    freshness_days: 90
+    include_patterns:
+      - job
+      - recruitment
+      - vacancy
+      - internship
+      - career
+      - notice
+
+  - name: "LinkedIn Jobs Search"
+    url: "https://www.linkedin.com/jobs/search/?keywords=software%20internship&location=India"
+    type: "auto"
+    freshness_days: 14
+    include_patterns:
+      - intern
+      - internship
+      - software
+
+  - name: "Indeed Jobs Search"
+    url: "https://in.indeed.com/jobs?q=software+internship&l=India"
+    type: "auto"
+    freshness_days: 14
+    include_patterns:
+      - intern
+      - internship
+      - software
+
+  - name: "Google Careers Search"
+    url: "https://www.google.com/about/careers/applications/jobs/results/?q=intern&location=India"
+    type: "auto"
+    freshness_days: 30
+    include_patterns:
+      - intern
+      - internship

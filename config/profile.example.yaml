@@ -1,0 +1,37 @@
+# Keep this file generic if your repository is public.
+# Do not commit a full private resume unless you understand the privacy tradeoff.
+candidate:
+  title: "Software / Data / AI Internship"
+  location_keywords:
+    - remote
+    - kolkata
+    - west bengal
+    - india
+  include_keywords:
+    - internship
+    - intern
+    - trainee
+    - software
+    - data
+    - machine learning
+    - ai
+    - python
+    - javascript
+    - react
+  exclude_keywords:
+    - senior
+    - manager
+    - faculty
+    - professor
+    - expired
+    - closed
+  resume_keywords:
+    - python
+    - javascript
+    - react
+    - sql
+    - machine learning
+    - data analysis
+    - html
+    - css
+  minimum_score: 2

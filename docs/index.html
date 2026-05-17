@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Notice Monitor</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(circle at top left, #1e3a8a 0, transparent 32rem), #0f172a;
+      }
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      header {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+      h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1;
+        margin: 0;
+        letter-spacing: -0.06em;
+      }
+      p {
+        margin: 0;
+        color: #cbd5e1;
+      }
+      .panel {
+        background: rgba(15, 23, 42, 0.78);
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 22px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+        padding: 18px;
+      }
+      .controls {
+        display: grid;
+        grid-template-columns: 1fr 160px 160px;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgba(148, 163, 184, 0.28);
+        border-radius: 14px;
+        padding: 12px 14px;
+        background: rgba(15, 23, 42, 0.86);
+        color: #f8fafc;
+        font: inherit;
+      }
+      textarea {
+        min-height: 88px;
+        resize: vertical;
+      }
+      .resume-box {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 14px 0 0;
+        color: #94a3b8;
+        font-size: 0.92rem;
+      }
+      .jobs {
+        display: grid;
+        gap: 14px;
+      }
+      .job {
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 18px;
+        background: rgba(30, 41, 59, 0.72);
+      }
+      .job h2 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+      .job a {
+        color: #93c5fd;
+        text-decoration: none;
+      }
+      .job a:hover {
+        text-decoration: underline;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .badge {
+        border-radius: 999px;
+        padding: 5px 9px;
+        background: rgba(59, 130, 246, 0.16);
+        color: #bfdbfe;
+        font-size: 0.78rem;
+      }
+      .empty {
+        padding: 24px;
+        text-align: center;
+        color: #cbd5e1;
+      }
+      @media (max-width: 760px) {
+        .controls {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Job Notice Monitor</h1>
+        <p>Tracks configured websites and PDFs, filters expired notices, and ranks opportunities by your criteria.</p>
+        <div class="meta" id="summary"></div>
+      </header>
+
+      <section class="panel">
+        <div class="resume-box">
+          <label for="resumeKeywords">Private local resume keywords for re-ranking</label>
+          <textarea id="resumeKeywords" placeholder="Paste skills or keywords here. This stays in your browser only."></textarea>
+        </div>
+
+        <div class="controls">
+          <input id="search" type="search" placeholder="Search title, source, keywords..." />
+          <select id="sourceFilter">
+            <option value="">All sources</option>
+          </select>
+          <select id="sortBy">
+            <option value="score">Best match</option>
+            <option value="deadline">Deadline</option>
+            <option value="source">Source</option>
+          </select>
+        </div>
+
+        <div class="jobs" id="jobs"></div>
+      </section>
+    </main>
+
+    <script>
+      const state = { data: { jobs: [], generated_at: null, errors: [] } };
+      const jobsEl = document.querySelector("#jobs");
+      const summaryEl = document.querySelector("#summary");
+      const searchEl = document.querySelector("#search");
+      const sourceFilterEl = document.querySelector("#sourceFilter");
+      const sortByEl = document.querySelector("#sortBy");
+      const resumeKeywordsEl = document.querySelector("#resumeKeywords");
+
+      resumeKeywordsEl.value = localStorage.getItem("resumeKeywords") || "";
+
+      function localScore(job) {
+        const terms = resumeKeywordsEl.value
+          .toLowerCase()
+          .split(/[,;\n]+/)
+          .map((term) => term.trim())
+          .filter(Boolean);
+        const text = `${job.title} ${job.summary} ${(job.matched_keywords || []).join(" ")}`.toLowerCase();
+        return terms.reduce((score, term) => score + (text.includes(term) ? 1 : 0), 0);
+      }
+
+      function render() {
+        const query = searchEl.value.toLowerCase().trim();
+        const selectedSource = sourceFilterEl.value;
+        const sortBy = sortByEl.value;
+
+        let jobs = [...state.data.jobs].map((job) => ({ ...job, local_score: localScore(job) }));
+        jobs = jobs.filter((job) => {
+          const haystack = `${job.title} ${job.source} ${job.summary} ${(job.matched_keywords || []).join(" ")}`.toLowerCase();
+          return (!query || haystack.includes(query)) && (!selectedSource || job.source === selectedSource);
+        });
+
+        jobs.sort((left, right) => {
+          if (sortBy === "deadline") return (left.deadline || "9999-12-31").localeCompare(right.deadline || "9999-12-31");
+          if (sortBy === "source") return left.source.localeCompare(right.source);
+          return (right.score + right.local_score) - (left.score + left.local_score);
+        });
+
+        summaryEl.innerHTML = `
+          <span>${state.data.jobs.length} live matches</span>
+          <span>Updated: ${state.data.generated_at ? new Date(state.data.generated_at).toLocaleString() : "not yet"}</span>
+          <span>${state.data.errors.length} scrape warnings</span>
+        `;
+
+        jobsEl.innerHTML = jobs.length
+          ? jobs.map((job) => `
+              <article class="job">
+                <h2><a href="${job.url}" target="_blank" rel="noreferrer">${escapeHtml(job.title)}</a></h2>
+                <div class="badges">
+                  <span class="badge">${escapeHtml(job.source)}</span>
+                  <span class="badge">Score ${job.score + job.local_score}</span>
+                  <span class="badge">${job.content_type || "html"}</span>
+                  ${job.deadline ? `<span class="badge">Deadline ${job.deadline}</span>` : ""}
+                </div>
+                <p>${escapeHtml(job.summary || "No summary available.")}</p>
+                <div class="badges">
+                  ${(job.matched_keywords || []).slice(0, 12).map((keyword) => `<span class="badge">${escapeHtml(keyword)}</span>`).join("")}
+                </div>
+              </article>
+            `).join("")
+          : `<div class="empty">No matching live opportunities found for the current filters.</div>`;
+      }
+
+      function escapeHtml(value) {
+        return String(value || "").replace(/[&<>"']/g, (char) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;",
+        })[char]);
+      }
+
+      async function init() {
+        try {
+          const response = await fetch("data/jobs.json", { cache: "no-store" });
+          state.data = await response.json();
+        } catch (error) {
+          jobsEl.innerHTML = `<div class="empty">Could not load data/jobs.json. Run the scraper first.</div>`;
+        }
+
+        const sources = [...new Set(state.data.jobs.map((job) => job.source))].sort();
+        sourceFilterEl.innerHTML += sources.map((source) => `<option value="${escapeHtml(source)}">${escapeHtml(source)}</option>`).join("");
+        render();
+      }
+
+      [searchEl, sourceFilterEl, sortByEl].forEach((element) => element.addEventListener("input", render));
+      resumeKeywordsEl.addEventListener("input", () => {
+        localStorage.setItem("resumeKeywords", resumeKeywordsEl.value);
+        render();
+      });
+
+      init();
+    </script>
+  </body>
+</html>
