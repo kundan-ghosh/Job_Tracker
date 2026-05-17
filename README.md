@@ -1,6 +1,6 @@
 # Job Notice Monitor
 
-A free-to-deploy job and internship monitor for user-selected websites. It scrapes configured websites on a schedule, reads linked PDF notices, filters out expired/closed notices, ranks matches against your criteria, and serves the results as a static website.
+A free-to-deploy job, internship, fellowship, research, and vacancy monitor for user-selected websites. It scrapes configured websites on a schedule, reads linked PDF notices, filters out expired/closed notices where possible, stores broad live results, and lets each visitor filter the results for their own profile.
 
 ## Why this architecture
 
@@ -8,13 +8,14 @@ A free-to-deploy job and internship monitor for user-selected websites. It scrap
 - **Free scheduled scraping:** GitHub Actions runs the scraper every 6 hours in a public repository.
 - **No paid database:** scraped results are written to `docs/data/jobs.json`.
 - **PDF support:** linked PDF notices are downloaded and text is extracted before ranking.
-- **Privacy-aware resume matching:** commit only keyword criteria; paste private resume keywords in the website UI for local-only re-ranking.
+- **User-side matching:** visitors paste their own resume/skill keywords in the website UI; those keywords stay in their browser.
+- **User-requested websites:** visitors can add a website request in the UI and get a ready-to-paste YAML block for `config/sources.yaml`.
 
 GitHub’s current documentation says GitHub Pages is available for public repositories on GitHub Free, and GitHub Actions usage is free for public repositories using standard GitHub-hosted runners.
 
 ## Files
 
-- `config/sources.example.yaml` — example websites to monitor.
+- `config/sources.example.yaml` — default websites to monitor.
 - `config/profile.example.yaml` — example matching criteria.
 - `scraper/job_scraper.py` — scraper, PDF reader, expiry filter, and ranker.
 - `docs/index.html` — static website UI.
@@ -57,6 +58,7 @@ Notes:
 - Add words that commonly appear in useful links under `include_patterns`.
 - For PDF-heavy university sites, include `notice`, `recruitment`, `vacancy`, and `pdf`.
 - Some websites block automated requests or require login. LinkedIn and Indeed may limit scraping; official career pages and university notice pages are more reliable.
+- A visitor can use the website’s **Add a website** form to generate a YAML block, but the block still must be committed to GitHub before the scraper can monitor it permanently.
 
 ## Configure matching criteria
 
@@ -77,7 +79,23 @@ candidate:
   minimum_score: 2
 ```
 
-Do not commit a full private resume to a public repository. Use skill keywords instead.
+Do not commit a full private resume to a public repository. Use broad public criteria here. Each user can paste their own private resume/skill keywords in the website UI for local-only filtering.
+
+## Filtering in the website
+
+The website supports:
+
+- Search across title, source, summary, and matched keywords.
+- Source filtering.
+- Opportunity type filtering, including jobs, internships, research, fellowships, projects, and scholarships.
+- Location keyword filtering.
+- Minimum score filtering.
+- Deadline filtering.
+- PDF-only or HTML-only filtering.
+- User-specific resume/skill keyword re-ranking.
+- User-specific hide keywords.
+
+Because GitHub Pages is static, these filters work on already-scraped data from `docs/data/jobs.json`.
 
 ## Deploy for free on GitHub
 
@@ -95,4 +113,5 @@ The workflow also runs every 6 hours. Scheduled GitHub Actions can be delayed du
 - Sites that require login, CAPTCHA, heavy JavaScript, or block bots may not scrape reliably.
 - Expiry detection is heuristic: explicit deadlines are best; otherwise recent notices are kept based on `freshness_days`.
 - Scanned image-only PDFs need OCR, which is intentionally not included in this free lightweight version.
+- A static GitHub Pages site cannot let anonymous visitors permanently change the central scrape list. They can generate a source request, but the repository owner must commit it.
 - For a multi-customer SaaS product, GitHub Pages is not the right backend. This repo is designed as a free personal/job-monitor deployment.
