@@ -28,11 +28,14 @@ default_include_patterns: &default_include_patterns
   - apply
   - hiring
   - pdf
+  - srf
+  -jrf
 
 sources:
   - name: "ISI Kolkata"
     url: "https://www.isical.ac.in/public/jobs"
     type: "auto"
+    category: "research" 
     freshness_days: 90
     include_patterns:
       - job
