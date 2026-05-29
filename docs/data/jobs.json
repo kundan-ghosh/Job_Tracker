@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T20:15:38.940477+00:00",
+  "generated_at": "2026-05-29T02:52:41.355518+00:00",
   "configured_source_count": 19,
   "scraped_source_count": 15,
   "excluded_categories": [
@@ -114,6 +114,70 @@
   ],
   "jobs": [
     {
+      "id": "ea48954910e90e9b",
+      "source": "Internshala ML",
+      "organization": "Internshala ML",
+      "title": "Internships",
+      "url": "https://internshala.com/internships/?utm_source=is_header",
+      "score": 42,
+      "matched_keywords": [
+        "ai",
+        "css",
+        "data",
+        "html",
+        "india",
+        "intern",
+        "internship",
+        "javascript",
+        "job",
+        "jobs",
+        "kolkata",
+        "machine learning",
+        "opening",
+        "position",
+        "project",
+        "python",
+        "react",
+        "recruitment",
+        "remote",
+        "research",
+        "software",
+        "sql"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "location": "Bengaluru, Chennai, Delhi, Hyderabad",
+      "job_type": "internship",
+      "salary": "₹599",
+      "source_id": "b61b8852a95ac716",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "css",
+        "data",
+        "html",
+        "india",
+        "intern",
+        "internship",
+        "javascript",
+        "job",
+        "jobs",
+        "kolkata",
+        "machine learning",
+        "opening",
+        "position",
+        "project",
+        "python"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-29T02:52:26.502803+00:00"
+    },
+    {
       "id": "513057be05ebc2fe",
       "source": "Internshala ML",
       "organization": "Internshala ML",
@@ -147,8 +211,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Chennai Internships in Chennai: Top 2020 Paid Internships in Chennai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Internship in Chennai Internships in Chennai: Top 2020 Paid Internships in Chennai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "summary": "Internship in Chennai Internships in Chennai: Top 2014 Paid Internships in Chennai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Internship in Chennai Internships in Chennai: Top 2014 Paid Internships in Chennai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -175,7 +239,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:25.912833+00:00"
+      "checked_at": "2026-05-29T02:52:26.537083+00:00"
     },
     {
       "id": "c752a4b7625757fe",
@@ -211,8 +275,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Kolkata Internships in Kolkata: Top 1976 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Internship in Kolkata Internships in Kolkata: Top 1976 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "summary": "Internship in Kolkata Internships in Kolkata: Top 1971 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Internship in Kolkata Internships in Kolkata: Top 1971 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -239,20 +303,19 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:27.624361+00:00"
+      "checked_at": "2026-05-29T02:52:30.279088+00:00"
     },
     {
-      "id": "021eedc5311eb5b5",
+      "id": "009eab25b5af7a60",
       "source": "Internshala Data Science",
       "organization": "Internshala Data Science",
-      "title": "Internship in Chennai",
-      "url": "https://internshala.com/internships/internship-in-chennai/?utm_source=is_menu_dropdown",
+      "title": "Internships",
+      "url": "https://internshala.com/internships",
       "score": 42,
       "matched_keywords": [
         "ai",
         "css",
         "data",
-        "data analysis",
         "html",
         "india",
         "intern",
@@ -268,6 +331,7 @@
         "python",
         "react",
         "recruitment",
+        "remote",
         "research",
         "software",
         "sql"
@@ -275,8 +339,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Chennai Internships in Chennai: Top 2020 Paid Internships in Chennai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Internship in Chennai Internships in Chennai: Top 2020 Paid Internships in Chennai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "summary": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -287,7 +351,6 @@
         "ai",
         "css",
         "data",
-        "data analysis",
         "html",
         "india",
         "intern",
@@ -299,11 +362,12 @@
         "machine learning",
         "opening",
         "position",
-        "project"
+        "project",
+        "python"
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:34.087808+00:00"
+      "checked_at": "2026-05-29T02:52:32.837026+00:00"
     },
     {
       "id": "7eed530ee9003df2",
@@ -339,8 +403,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Kolkata Internships in Kolkata: Top 1976 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Internship in Kolkata Internships in Kolkata: Top 1976 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "summary": "Internship in Kolkata Internships in Kolkata: Top 1971 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Internship in Kolkata Internships in Kolkata: Top 1971 Paid Internships in Kolkata Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -367,15 +431,15 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:36.975038+00:00"
+      "checked_at": "2026-05-29T02:52:39.239037+00:00"
     },
     {
-      "id": "ff387b3149b37a2e",
-      "source": "Internshala ML",
-      "organization": "Internshala ML",
+      "id": "c2a80d33948f5667",
+      "source": "Internshala Data Science",
+      "organization": "Internshala Data Science",
       "title": "Internships",
-      "url": "https://internshala.com/internships",
-      "score": 40,
+      "url": "https://internshala.com/internships/?utm_source=is_header",
+      "score": 42,
       "matched_keywords": [
         "ai",
         "css",
@@ -389,6 +453,7 @@
         "jobs",
         "kolkata",
         "machine learning",
+        "opening",
         "position",
         "project",
         "python",
@@ -402,12 +467,12 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internships 6690 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Internships 6690 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "summary": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
-      "source_id": "b61b8852a95ac716",
+      "source_id": "d6bc69adea20d9fc",
       "is_pdf": false,
       "pdf_url": "",
       "tags": [
@@ -423,14 +488,14 @@
         "jobs",
         "kolkata",
         "machine learning",
+        "opening",
         "position",
         "project",
-        "python",
-        "react"
+        "python"
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:24.502311+00:00"
+      "checked_at": "2026-05-29T02:52:40.224646+00:00"
     },
     {
       "id": "f060c3743c76c116",
@@ -464,8 +529,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Pune Internships in Pune: Top 2233 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
-      "description": "Internship in Pune Internships in Pune: Top 2233 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "summary": "Internship in Pune Internships in Pune: Top 2225 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "description": "Internship in Pune Internships in Pune: Top 2225 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -492,133 +557,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:28.704072+00:00"
-    },
-    {
-      "id": "c2a80d33948f5667",
-      "source": "Internshala Data Science",
-      "organization": "Internshala Data Science",
-      "title": "Internships",
-      "url": "https://internshala.com/internships/?utm_source=is_header",
-      "score": 40,
-      "matched_keywords": [
-        "ai",
-        "css",
-        "data",
-        "html",
-        "india",
-        "intern",
-        "internship",
-        "javascript",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "position",
-        "project",
-        "python",
-        "react",
-        "recruitment",
-        "remote",
-        "research",
-        "software",
-        "sql"
-      ],
-      "deadline": null,
-      "posted_date": null,
-      "content_type": "html",
-      "summary": "Internships 6688 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Internships 6688 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "location": "Bengaluru, Chennai, Delhi, Hyderabad",
-      "job_type": "internship",
-      "salary": "₹599",
-      "source_id": "d6bc69adea20d9fc",
-      "is_pdf": false,
-      "pdf_url": "",
-      "tags": [
-        "ai",
-        "css",
-        "data",
-        "html",
-        "india",
-        "intern",
-        "internship",
-        "javascript",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "position",
-        "project",
-        "python",
-        "react"
-      ],
-      "experience": "",
-      "category": "government",
-      "checked_at": "2026-05-28T20:15:33.274265+00:00"
-    },
-    {
-      "id": "009eab25b5af7a60",
-      "source": "Internshala Data Science",
-      "organization": "Internshala Data Science",
-      "title": "Internships",
-      "url": "https://internshala.com/internships",
-      "score": 40,
-      "matched_keywords": [
-        "ai",
-        "css",
-        "data",
-        "html",
-        "india",
-        "intern",
-        "internship",
-        "javascript",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "position",
-        "project",
-        "python",
-        "react",
-        "recruitment",
-        "remote",
-        "research",
-        "software",
-        "sql"
-      ],
-      "deadline": null,
-      "posted_date": null,
-      "content_type": "html",
-      "summary": "Internships 6688 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Internships 6688 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "location": "Bengaluru, Chennai, Delhi, Hyderabad",
-      "job_type": "internship",
-      "salary": "₹599",
-      "source_id": "d6bc69adea20d9fc",
-      "is_pdf": false,
-      "pdf_url": "",
-      "tags": [
-        "ai",
-        "css",
-        "data",
-        "html",
-        "india",
-        "intern",
-        "internship",
-        "javascript",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "position",
-        "project",
-        "python",
-        "react"
-      ],
-      "experience": "",
-      "category": "government",
-      "checked_at": "2026-05-28T20:15:35.408054+00:00"
+      "checked_at": "2026-05-29T02:52:26.164305+00:00"
     },
     {
       "id": "7eef6db17e154164",
@@ -652,8 +591,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Pune Internships in Pune: Top 2233 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
-      "description": "Internship in Pune Internships in Pune: Top 2233 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "summary": "Internship in Pune Internships in Pune: Top 2225 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "description": "Internship in Pune Internships in Pune: Top 2225 Paid Internships in Pune Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -680,7 +619,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:38.939664+00:00"
+      "checked_at": "2026-05-29T02:52:41.354613+00:00"
     },
     {
       "id": "1f0d586d0f7b3bd5",
@@ -714,8 +653,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Bangalore Internships in Bangalore: Top 2558 Paid Internships in Bangalore Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
-      "description": "Internship in Bangalore Internships in Bangalore: Top 2558 Paid Internships in Bangalore Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
+      "summary": "Internship in Bangalore Internships in Bangalore: Top 2547 Paid Internships in Bangalore Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
+      "description": "Internship in Bangalore Internships in Bangalore: Top 2547 Paid Internships in Bangalore Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -742,69 +681,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:26.243293+00:00"
-    },
-    {
-      "id": "08026127e7026a43",
-      "source": "Internshala Data Science",
-      "organization": "Internshala Data Science",
-      "title": "Internship in Bangalore",
-      "url": "https://internshala.com/internships/internship-in-bangalore/?utm_source=is_menu_dropdown",
-      "score": 39,
-      "matched_keywords": [
-        "ai",
-        "data",
-        "india",
-        "intern",
-        "internship",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "opening",
-        "position",
-        "project",
-        "python",
-        "react",
-        "recruitment",
-        "remote",
-        "research",
-        "software",
-        "sql",
-        "trainee"
-      ],
-      "deadline": null,
-      "posted_date": null,
-      "content_type": "html",
-      "summary": "Internship in Bangalore Internships in Bangalore: Top 2557 Paid Internships in Bangalore Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
-      "description": "Internship in Bangalore Internships in Bangalore: Top 2557 Paid Internships in Bangalore Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
-      "location": "Bengaluru, Chennai, Delhi, Hyderabad",
-      "job_type": "internship",
-      "salary": "₹599",
-      "source_id": "d6bc69adea20d9fc",
-      "is_pdf": false,
-      "pdf_url": "",
-      "tags": [
-        "ai",
-        "data",
-        "india",
-        "intern",
-        "internship",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "opening",
-        "position",
-        "project",
-        "python",
-        "react",
-        "recruitment",
-        "remote"
-      ],
-      "experience": "",
-      "category": "government",
-      "checked_at": "2026-05-28T20:15:38.741379+00:00"
+      "checked_at": "2026-05-29T02:52:30.773316+00:00"
     },
     {
       "id": "ad93b847bce58ec3",
@@ -837,8 +714,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Mumbai Internships in Mumbai: Top 2815 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
-      "description": "Internship in Mumbai Internships in Mumbai: Top 2815 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "summary": "Internship in Mumbai Internships in Mumbai: Top 2810 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "description": "Internship in Mumbai Internships in Mumbai: Top 2810 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -865,7 +742,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:26.438730+00:00"
+      "checked_at": "2026-05-29T02:52:27.936614+00:00"
     },
     {
       "id": "4d2610588e4f3bd9",
@@ -898,8 +775,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Mumbai Internships in Mumbai: Top 2815 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
-      "description": "Internship in Mumbai Internships in Mumbai: Top 2815 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "summary": "Internship in Mumbai Internships in Mumbai: Top 2810 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "description": "Internship in Mumbai Internships in Mumbai: Top 2810 Paid Internships in Mumbai Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -926,7 +803,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:34.817550+00:00"
+      "checked_at": "2026-05-29T02:52:35.666353+00:00"
     },
     {
       "id": "6c46f7317c807ebc",
@@ -958,8 +835,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Delhi Internships in Delhi: Top 3250 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
-      "description": "Internship in Delhi Internships in Delhi: Top 3250 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "summary": "Internship in Delhi Internships in Delhi: Top 3241 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "description": "Internship in Delhi Internships in Delhi: Top 3241 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -986,7 +863,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:25.308671+00:00"
+      "checked_at": "2026-05-29T02:52:27.057922+00:00"
     },
     {
       "id": "8c6fb3b322d01463",
@@ -1018,8 +895,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Delhi Internships in Delhi: Top 3250 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
-      "description": "Internship in Delhi Internships in Delhi: Top 3250 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "summary": "Internship in Delhi Internships in Delhi: Top 3241 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
+      "description": "Internship in Delhi Internships in Delhi: Top 3241 Paid Internships in Delhi NCR Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold. Your",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -1046,7 +923,67 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:36.733575+00:00"
+      "checked_at": "2026-05-29T02:52:37.204106+00:00"
+    },
+    {
+      "id": "ff387b3149b37a2e",
+      "source": "Internshala ML",
+      "organization": "Internshala ML",
+      "title": "Internships",
+      "url": "https://internshala.com/internships",
+      "score": 34,
+      "matched_keywords": [
+        "ai",
+        "data",
+        "data analysis",
+        "india",
+        "intern",
+        "internship",
+        "job",
+        "jobs",
+        "kolkata",
+        "machine learning",
+        "opening",
+        "position",
+        "project",
+        "python",
+        "recruitment",
+        "research",
+        "software",
+        "sql"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Internships 6671 Internships: Summer Internships 2026 | Paid Internships in India Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "location": "Bengaluru, Chennai, Delhi, Hyderabad",
+      "job_type": "internship",
+      "salary": "₹599",
+      "source_id": "b61b8852a95ac716",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "data",
+        "data analysis",
+        "india",
+        "intern",
+        "internship",
+        "job",
+        "jobs",
+        "kolkata",
+        "machine learning",
+        "opening",
+        "position",
+        "project",
+        "python",
+        "recruitment",
+        "research"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-29T02:52:23.779539+00:00"
     },
     {
       "id": "88f77cac2e3f6aab",
@@ -1077,8 +1014,8 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internship in Hyderabad Internships in Hyderabad: Top 2096 Paid Internships in Hyderabad Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
-      "description": "Internship in Hyderabad Internships in Hyderabad: Top 2096 Paid Internships in Hyderabad Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
+      "summary": "Internship in Hyderabad Internships in Hyderabad: Top 2091 Paid Internships in Hyderabad Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
+      "description": "Internship in Hyderabad Internships in Hyderabad: Top 2091 Paid Internships in Hyderabad Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
@@ -1105,74 +1042,15 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:26.608451+00:00"
+      "checked_at": "2026-05-29T02:52:28.903962+00:00"
     },
     {
-      "id": "f520a89e67bea1df",
-      "source": "Internshala Data Science",
-      "organization": "Internshala Data Science",
-      "title": "Internship in Hyderabad",
-      "url": "https://internshala.com/internships/internship-in-hyderabad/?utm_source=is_menu_dropdown",
-      "score": 33,
-      "matched_keywords": [
-        "ai",
-        "data",
-        "india",
-        "intern",
-        "internship",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "position",
-        "project",
-        "python",
-        "recruitment",
-        "research",
-        "software",
-        "sql",
-        "trainee"
-      ],
-      "deadline": null,
-      "posted_date": null,
-      "content_type": "html",
-      "summary": "Internship in Hyderabad Internships in Hyderabad: Top 2096 Paid Internships in Hyderabad Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
-      "description": "Internship in Hyderabad Internships in Hyderabad: Top 2096 Paid Internships in Hyderabad Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on",
-      "location": "Bengaluru, Chennai, Delhi, Hyderabad",
-      "job_type": "internship",
-      "salary": "₹599",
-      "source_id": "d6bc69adea20d9fc",
-      "is_pdf": false,
-      "pdf_url": "",
-      "tags": [
-        "ai",
-        "data",
-        "india",
-        "intern",
-        "internship",
-        "job",
-        "jobs",
-        "kolkata",
-        "machine learning",
-        "position",
-        "project",
-        "python",
-        "recruitment",
-        "research",
-        "software",
-        "sql"
-      ],
-      "experience": "",
-      "category": "government",
-      "checked_at": "2026-05-28T20:15:35.070419+00:00"
-    },
-    {
-      "id": "96491058f6be60a8",
-      "source": "Internshala Data Science",
-      "organization": "Internshala Data Science",
+      "id": "975c4f6959f7a3ff",
+      "source": "Internshala ML",
+      "organization": "Internshala ML",
       "title": "Work from Home",
       "url": "https://internshala.com/internships/work-from-home-internships/?utm_source=is_menu_dropdown",
-      "score": 31,
+      "score": 29,
       "matched_keywords": [
         "ai",
         "data",
@@ -1186,7 +1064,6 @@
         "machine learning",
         "project",
         "python",
-        "recruitment",
         "remote",
         "research",
         "software",
@@ -1195,12 +1072,12 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Work from Home Work From Home Internships: Explore 1861 WFH Internships for Students Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
-      "description": "Work from Home Work From Home Internships: Explore 1861 WFH Internships for Students Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "summary": "Work from Home Work From Home Internships: Explore 1856 WFH Internships for Students Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
+      "description": "Work from Home Work From Home Internships: Explore 1856 WFH Internships for Students Close Cancel Close Close Close Close Cancel Yes Loading, please wait... Student Employer / T&P Login with Google OR Email Password Forgot password? Login New to Internshala? Register ( Student / Company ) Your account is put on hold.",
       "location": "Bengaluru, Chennai, Delhi, Hyderabad",
       "job_type": "internship",
       "salary": "₹599",
-      "source_id": "d6bc69adea20d9fc",
+      "source_id": "b61b8852a95ac716",
       "is_pdf": false,
       "pdf_url": "",
       "tags": [
@@ -1216,14 +1093,14 @@
         "machine learning",
         "project",
         "python",
-        "recruitment",
         "remote",
         "research",
-        "software"
+        "software",
+        "sql"
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:38.504288+00:00"
+      "checked_at": "2026-05-29T02:52:28.737159+00:00"
     },
     {
       "id": "41e10bcbe17ec8e1",
@@ -1267,7 +1144,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:02.223561+00:00"
+      "checked_at": "2026-05-29T02:51:59.402873+00:00"
     },
     {
       "id": "f4e20738efc77289",
@@ -1307,7 +1184,7 @@
       ],
       "experience": "",
       "category": "research",
-      "checked_at": "2026-05-28T20:15:11.602895+00:00"
+      "checked_at": "2026-05-29T02:52:07.432204+00:00"
     },
     {
       "id": "97f1cad7a0dc48da",
@@ -1345,45 +1222,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:14:51.143368+00:00"
-    },
-    {
-      "id": "0b32104b1571c951",
-      "source": "IISc Bangalore",
-      "organization": "IISc Bangalore",
-      "title": "Alumni Award",
-      "url": "https://iisc.ac.in/institute-awards/alumni-award-for-excellence-in-research-in-scienceengineering/",
-      "score": 11,
-      "matched_keywords": [
-        "ai",
-        "india",
-        "intern",
-        "position",
-        "project",
-        "research"
-      ],
-      "deadline": null,
-      "posted_date": null,
-      "content_type": "html",
-      "summary": "Alumni Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar Financial",
-      "description": "Alumni Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar Financial",
-      "location": "Bengaluru, India",
-      "job_type": "internship",
-      "salary": "Rs.20,000",
-      "source_id": "c879075e408aa65f",
-      "is_pdf": false,
-      "pdf_url": "",
-      "tags": [
-        "ai",
-        "india",
-        "intern",
-        "position",
-        "project",
-        "research"
-      ],
-      "experience": "",
-      "category": "government",
-      "checked_at": "2026-05-28T20:14:51.305015+00:00"
+      "checked_at": "2026-05-29T02:51:47.518877+00:00"
     },
     {
       "id": "d7dbfdf6aa36e1dc",
@@ -1421,7 +1260,45 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:14:53.048581+00:00"
+      "checked_at": "2026-05-29T02:51:48.311295+00:00"
+    },
+    {
+      "id": "0b32104b1571c951",
+      "source": "IISc Bangalore",
+      "organization": "IISc Bangalore",
+      "title": "Alumni Award",
+      "url": "https://iisc.ac.in/institute-awards/alumni-award-for-excellence-in-research-in-scienceengineering/",
+      "score": 11,
+      "matched_keywords": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "deadline": null,
+      "posted_date": null,
+      "content_type": "html",
+      "summary": "Alumni Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar Financial",
+      "description": "Alumni Award Indian Institute of Science English हिन्दी ( Hindi ) ಕನ್ನಡ ( Kannada ) Loading About From the Director Vision and Mission Administration Leadership The Court The Council Board of Trustees Finance Committee Director Deans of Administration Deans of Faculties Deans of Divisions Registrar Financial",
+      "location": "Bengaluru, India",
+      "job_type": "internship",
+      "salary": "Rs.20,000",
+      "source_id": "c879075e408aa65f",
+      "is_pdf": false,
+      "pdf_url": "",
+      "tags": [
+        "ai",
+        "india",
+        "intern",
+        "position",
+        "project",
+        "research"
+      ],
+      "experience": "",
+      "category": "government",
+      "checked_at": "2026-05-29T02:51:49.394252+00:00"
     },
     {
       "id": "329239be77d0a088",
@@ -1457,7 +1334,7 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:14:53.791263+00:00"
+      "checked_at": "2026-05-29T02:51:50.259809+00:00"
     },
     {
       "id": "bee3000eb065991a",
@@ -1495,14 +1372,14 @@
       ],
       "experience": "",
       "category": "government",
-      "checked_at": "2026-05-28T20:15:13.668780+00:00"
+      "checked_at": "2026-05-29T02:52:09.626332+00:00"
     },
     {
-      "id": "ea48954910e90e9b",
-      "source": "Internshala ML",
-      "organization": "Internshala ML",
-      "title": "Internships",
-      "url": "https://internshala.com/internships/?utm_source=is_header",
+      "id": "021eedc5311eb5b5",
+      "source": "Internshala Data Science",
+      "organization": "Internshala Data Science",
+      "title": "Internship in Chennai",
+      "url": "https://internshala.com/internships/internship-in-chennai/?utm_source=is_menu_dropdown",
       "score": 6,
       "matched_keywords": [
         "ai",
@@ -1512,12 +1389,12 @@
       "deadline": null,
       "posted_date": null,
       "content_type": "html",
-      "summary": "Internships Internshala Apologies for the inconvenience We regret to inform you that your page request has been denied due to a high volume of requests originating from your IP address (20.169.50.39). The matter should resolve itself automatically if you click the back button. If the issue persists, please send an",
-      "description": "Internships Internshala Apologies for the inconvenience We regret to inform you that your page request has been denied due to a high volume of requests originating from your IP address (20.169.50.39). The matter should resolve itself automatically if you click the back button. If the issue persists, please send an",
-      "location": "",
+      "summary": "Internship in Chennai Internshala Apologies for the inconvenience We regret to inform you that your page request has been denied due to a high volume of requests originating from your IP address (48.217.108.244). The matter should resolve itself automatically if you click the back button. If the issue persists, please",
+      "description": "Internship in Chennai Internshala Apologies for the inconvenience We regret to inform you that your page request has been denied due to a high volume of requests originating from your IP address (48.217.108.244). The matter should resolve itself automatically if you click the back button. If the issue persists, please",
+      "location": "Chennai",
       "job_type": "internship",
       "salary": "",
-      "source_id": "b61b8852a95ac716",
+      "source_id": "d6bc69adea20d9fc",
       "is_pdf": false,
       "pdf_url": "",
       "tags": [
@@ -1527,37 +1404,7 @@
       ],
       "experience": "",
       "category": "internship",
-      "checked_at": "2026-05-28T20:15:23.954741+00:00"
-    },
-    {
-      "id": "975c4f6959f7a3ff",
-      "source": "Internshala ML",
-      "organization": "Internshala ML",
-      "title": "Work from Home",
-      "url": "https://internshala.com/internships/work-from-home-internships/?utm_source=is_menu_dropdown",
-      "score": 4,
-      "matched_keywords": [
-        "ai",
-        "intern"
-      ],
-      "deadline": null,
-      "posted_date": null,
-      "content_type": "html",
-      "summary": "Work from Home Internshala Apologies for the inconvenience We regret to inform you that your page request has been denied due to a high volume of requests originating from your IP address (20.169.50.39). The matter should resolve itself automatically if you click the back button. If the issue persists, please send an",
-      "description": "Work from Home Internshala Apologies for the inconvenience We regret to inform you that your page request has been denied due to a high volume of requests originating from your IP address (20.169.50.39). The matter should resolve itself automatically if you click the back button. If the issue persists, please send an",
-      "location": "Work From Home",
-      "job_type": "internship",
-      "salary": "",
-      "source_id": "b61b8852a95ac716",
-      "is_pdf": false,
-      "pdf_url": "",
-      "tags": [
-        "ai",
-        "intern"
-      ],
-      "experience": "",
-      "category": "internship",
-      "checked_at": "2026-05-28T20:15:24.555670+00:00"
+      "checked_at": "2026-05-29T02:52:32.266096+00:00"
     },
     {
       "id": "28734bab742b0bbf",
@@ -1585,24 +1432,19 @@
       ],
       "experience": "",
       "category": "tech",
-      "checked_at": "2026-05-28T20:14:54.055322+00:00"
+      "checked_at": "2026-05-29T02:51:50.389818+00:00"
     }
   ],
   "errors": [
     {
       "source": "ISI Kolkata",
       "url": "https://www.isical.ac.in/jobs",
-      "error": "HTTPSConnectionPool(host='www.isical.ac.in', port=443): Max retries exceeded with url: /jobs (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.isical.ac.in', port=443) at 0x7f7f25075790>, 'Connection to www.isical.ac.in timed out. (connect timeout=8)'))"
+      "error": "HTTPSConnectionPool(host='www.isical.ac.in', port=443): Max retries exceeded with url: /jobs (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.isical.ac.in', port=443) at 0x7f141e238750>, 'Connection to www.isical.ac.in timed out. (connect timeout=8)'))"
     },
     {
       "source": "IIT Kharagpur SRIC",
       "url": "javaScript:void(0);",
       "error": "No connection adapters were found for 'javaScript:void(0);'"
-    },
-    {
-      "source": "IISc Bangalore",
-      "url": "https://iisc.ac.in/wp-content/uploads/2022/02/IISc_Migration_TC_generic_certificate_signed.pdf",
-      "error": "cryptography>=3.1 is required for AES algorithm"
     },
     {
       "source": "IISc Bangalore",
@@ -1617,6 +1459,11 @@
     {
       "source": "IISc Bangalore",
       "url": "https://iisc.ac.in/wp-content/uploads/2021/10/IISc-CGPA-Percentage-Conversion-notification-signed.pdf",
+      "error": "cryptography>=3.1 is required for AES algorithm"
+    },
+    {
+      "source": "IISc Bangalore",
+      "url": "https://iisc.ac.in/wp-content/uploads/2022/02/IISc_Migration_TC_generic_certificate_signed.pdf",
       "error": "cryptography>=3.1 is required for AES algorithm"
     },
     {
@@ -1653,6 +1500,21 @@
       "source": "CSIR India",
       "url": "https://www.csir.res.in/opportunities",
       "error": "404 Client Error: Not Found for url: https://www.csir.res.in/opportunities"
+    },
+    {
+      "source": "Internshala Data Science",
+      "url": "https://internshala.com/internships/internship-in-bangalore/?utm_source=is_menu_dropdown",
+      "error": "HTTPSConnectionPool(host='internshala.com', port=443): Read timed out. (read timeout=8)"
+    },
+    {
+      "source": "Internshala Data Science",
+      "url": "https://internshala.com/internships/work-from-home-internships/?utm_source=is_menu_dropdown",
+      "error": "HTTPSConnectionPool(host='internshala.com', port=443): Read timed out. (read timeout=8)"
+    },
+    {
+      "source": "Internshala Data Science",
+      "url": "https://internshala.com/internships/internship-in-hyderabad/?utm_source=is_menu_dropdown",
+      "error": "HTTPSConnectionPool(host='internshala.com', port=443): Read timed out. (read timeout=8)"
     }
   ],
   "stats": [
@@ -1758,8 +1620,8 @@
       "source": "Internshala Data Science",
       "url": "https://internshala.com/internships/data-science-internship",
       "candidates": 10,
-      "matches": 10,
-      "errors": 0
+      "matches": 7,
+      "errors": 3
     }
   ]
 }
