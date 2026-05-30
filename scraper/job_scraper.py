@@ -90,6 +90,47 @@ SALARY_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# ── NEW: Additional extraction patterns for enhanced frontend fields ──
+
+AGE_LIMIT_PATTERN = re.compile(
+    r"(?:age\s+limit|upper\s+age|age\s+relaxation)[^\n\r:]{0,30}[:\-]?\s*"
+    r"(\d{2}\s*(?:to|–|-)?\s*\d{0,2}\s*years?(?:[^\n\r.]{0,60})?)",
+    re.IGNORECASE,
+)
+
+EDUCATION_PATTERN = re.compile(
+    r"(?:qualification|education|eligibility)[^\n\r:]{0,30}[:\-]?\s*"
+    r"([A-Z][^\n\r.]{10,120})",
+    re.IGNORECASE,
+)
+
+FEES_PATTERN = re.compile(
+    r"(?:application\s+fee|exam\s+fee|registration\s+fee)[^\n\r:]{0,30}[:\-]?\s*"
+    r"((?:₹|rs\.?|inr)?\s*[0-9,]+(?:[^\n\r.]{0,60})?|no\s+fee|nil|exempted|free)",
+    re.IGNORECASE,
+)
+
+NOTICE_NUMBER_PATTERN = re.compile(
+    r"(?:ref\.?\s*no\.?|advt\.?\s*no\.?|notice\s*no\.?|recruitment\s*no\.?)[^\n\r:]{0,10}[:\-]?\s*"
+    r"([A-Z0-9][A-Z0-9/\-_.\s]{4,50})",
+    re.IGNORECASE,
+)
+
+SOURCE_TYPE_RULES = [
+    ("university", ["iit", "iiser", "iisc", "nit", "university", "college", "institute", "edu"]),
+    ("government", ["gov", "isro", "drdo", "barc", "csir", "cdac", "nic", "nielit", "dae", "dst"]),
+    ("corporate",  ["google", "microsoft", "adobe", "samsung", "ibm", "amazon", "meta", "apple"]),
+    ("portal",     ["internshala", "naukri", "linkedin", "indeed", "freejobalert", "sarkariresult"]),
+]
+
+SECTOR_RULES = [
+    ("government",   ["isro", "drdo", "gov.in", "nic", "csir", "cdac", "nielit", "icar", "dst", "dae", "barc"]),
+    ("corporate",    ["google", "microsoft", "adobe", "samsung", "ibm", "amazon"]),
+    ("startup",      ["internshala", "startup", "tech"]),
+    ("international",["international", "global", "overseas"]),
+    ("research",     ["research", "jrf", "srf", "fellow", "iit", "iisc", "isi", "tifr", "iiser"]),
+]
+
 
 # ─── NO CHANGE: Source and Job dataclasses are identical ────
 @dataclass
@@ -123,6 +164,13 @@ class Job:
     score: int = 0
     matched_keywords: list[str] = field(default_factory=list)
     checked_at: str = ""
+    # ── NEW fields for enhanced frontend display ──
+    age_limit: str = ""
+    education: str = ""
+    fees: str = ""
+    sector: str = ""
+    source_type: str = ""
+    notice_number: str = ""
 
     @property
     def unique_id(self) -> str:
@@ -153,6 +201,13 @@ class Job:
             "experience":       self.experience,
             "category":         self.category,
             "checked_at":       self.checked_at or utc_now().isoformat(),
+            # ── NEW fields ──
+            "age_limit":        self.age_limit,
+            "education":        self.education,
+            "fees":             self.fees,
+            "sector":           self.sector,
+            "source_type":      self.source_type,
+            "notice_number":    self.notice_number,
         }
 
 
@@ -336,6 +391,47 @@ def extract_salary(text: str) -> str:
     return normalize_text(match.group(0)) if match else ""
 
 
+# ── NEW: Extractors for enhanced fields ───────────────────────
+def extract_age_limit(text: str) -> str:
+    match = AGE_LIMIT_PATTERN.search(text[:6000])
+    return normalize_text(match.group(1))[:120] if match else ""
+
+
+def extract_education(text: str) -> str:
+    match = EDUCATION_PATTERN.search(text[:6000])
+    return normalize_text(match.group(1))[:200] if match else ""
+
+
+def extract_fees(text: str) -> str:
+    lowered = text[:6000].lower()
+    # Check for explicit "no fee" before pattern matching
+    if re.search(r"\b(no\s+fee|no\s+application\s+fee|nil|free|exempted)\b", lowered):
+        return "No application fee"
+    match = FEES_PATTERN.search(text[:6000])
+    return normalize_text(match.group(1))[:80] if match else ""
+
+
+def extract_notice_number(text: str) -> str:
+    match = NOTICE_NUMBER_PATTERN.search(text[:5000])
+    return normalize_text(match.group(1))[:80] if match else ""
+
+
+def infer_source_type(source: Source) -> str:
+    combined = f"{source.name} {source.url}".lower()
+    for source_type, keywords in SOURCE_TYPE_RULES:
+        if any(kw in combined for kw in keywords):
+            return source_type
+    return "general"
+
+
+def infer_sector(text: str, source: Source) -> str:
+    combined = f"{source.name} {source.url} {text[:2000]}".lower()
+    for sector, keywords in SECTOR_RULES:
+        if any(kw in combined for kw in keywords):
+            return sector
+    return source.category or "general"
+
+
 def score_match(text: str, profile: dict[str, Any]) -> tuple[int, list[str]]:
     candidate        = profile.get("candidate", {})
     include_keywords = candidate.get("include_keywords", []) or []
@@ -463,6 +559,13 @@ def _fetch_one_link(
             score           = score,
             matched_keywords= matched_keywords,
             checked_at      = utc_now().isoformat(),
+            # ── NEW enhanced fields ──
+            age_limit       = extract_age_limit(full_text),
+            education       = extract_education(full_text),
+            fees            = extract_fees(full_text),
+            sector          = infer_sector(full_text, source),
+            source_type     = infer_source_type(source),
+            notice_number   = extract_notice_number(full_text),
         )
         return job.to_dict(), None
 
@@ -625,6 +728,7 @@ def main() -> int:
     deduped = {job["id"]: job for job in all_jobs}
     output  = {
         "generated_at":           utc_now().isoformat(),
+        "total_sources":          configured_source_count,  # frontend stats bar uses this key
         "configured_source_count": configured_source_count,
         "scraped_source_count":   len(sources),
         "excluded_categories":    sorted(excluded_categories),

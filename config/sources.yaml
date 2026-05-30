@@ -1,3 +1,11 @@
+# ══════════════════════════════════════════════════════════════════
+# Job Horizon — Sources Configuration
+# Updated: 2026  |  45 sources across India
+# ══════════════════════════════════════════════════════════════════
+
+# ─── Candidate Profile ────────────────────────────────────────────
+# The scraper uses these to score each scraped notice.
+# Higher score = better match shown more prominently in the UI.
 candidate:
   include_keywords:
     - machine learning
@@ -14,6 +22,12 @@ candidate:
     - project associate
     - internship
     - fellowship
+    - neural network
+    - image processing
+    - satellite
+    - geospatial
+    - transformer
+    - lora
   resume_keywords:
     - transformer
     - lora
@@ -23,6 +37,12 @@ candidate:
     - geospatial
     - statistics
     - linear algebra
+    - pytorch
+    - tensorflow
+    - scikit-learn
+    - opencv
+    - pandas
+    - numpy
   location_keywords:
     - india
     - kolkata
@@ -31,13 +51,21 @@ candidate:
     - bangalore
     - bengaluru
     - remote
+    - work from home
+    - wfh
   exclude_keywords:
     - senior professor
     - 10 years experience
-    - phd required
+    - professor (grade pay 10000)
+    - superintendent
+    - registrar
   minimum_score: 1
 
+# ─── Sources ──────────────────────────────────────────────────────
 sources:
+
+  # ── TIER 1: Core Research Institutions (West Bengal & nearby) ──
+
   - name: "ISI Kolkata"
     url: "https://www.isical.ac.in/jobs"
     category: "research"
@@ -50,6 +78,18 @@ sources:
       - project
       - pdf
       - notice
+      - fellow
+
+  - name: "ISI Delhi Centre"
+    url: "https://www.isid.ac.in/vacancies"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - recruitment
+      - vacancy
+      - project associate
+      - jrf
+      - srf
 
   - name: "IIT Kharagpur SRIC"
     url: "https://erp.iitkgp.ac.in/SRICStaffRecruitment/Advertise.jsp"
@@ -57,129 +97,353 @@ sources:
     freshness_days: 60
     include_patterns:
       - recruitment
-      - vacancy
+      - project
       - jrf
       - srf
-      - pdf
-
-  - name: "IISc Bangalore"
-    url: "https://iisc.ac.in/opportunities"
-    category: "research"
-    freshness_days: 60
-    include_patterns:
-      - recruitment
-      - vacancy
       - research
-      - project
-      - fellowship
-      - pdf
-
-  - name: "IIT Bombay"
-    url: "https://www.iitb.ac.in/en/careers"
-    category: "research"
-    freshness_days: 60
-    include_patterns:
-      - recruitment
-      - vacancy
-      - jrf
-      - project
-      - pdf
-
-  - name: "IIT Delhi"
-    url: "https://home.iitd.ac.in/jobs-iitd.php"
-    category: "research"
-    freshness_days: 60
-    include_patterns:
-      - recruitment
-      - jrf
-      - project
-      - vacancy
-      - pdf
-
-  - name: "IIT Kanpur"
-    url: "https://www.iitk.ac.in/new/jobs"
-    category: "research"
-    freshness_days: 60
-    include_patterns:
-      - recruitment
-      - jrf
-      - project
-      - vacancy
-
-  - name: "IIT Roorkee"
-    url: "https://iitr.ac.in/sections/sdo/recruitment"
-    category: "research"
-    freshness_days: 60
-    include_patterns:
-      - recruitment
-      - vacancy
-      - jrf
-      - project
-      - pdf
 
   - name: "IISER Kolkata"
-    url: "https://www.iiserkol.ac.in/web/en/announcements/job-vacancies"
+    url: "https://www.iiserkol.ac.in/web/en/research/research-positions/"
     category: "research"
     freshness_days: 60
     include_patterns:
-      - vacancy
-      - recruitment
       - jrf
+      - srf
+      - fellow
       - project
-      - pdf
+      - recruitment
 
   - name: "NIT Durgapur"
-    url: "https://nitdgp.ac.in"
+    url: "https://nitdgp.ac.in/notices/project-positions"
     category: "research"
     freshness_days: 60
     include_patterns:
-      - recruitment
-      - vacancy
-      - project
+      - project assistant
+      - project associate
       - jrf
+      - recruitment
 
   - name: "Jadavpur University"
-    url: "https://jadavpuruniversity.in/notifications/"
+    url: "https://jadavpuruniversity.in/notifications.php"
+    category: "research"
+    freshness_days: 45
+    include_patterns:
+      - jrf
+      - srf
+      - project
+      - recruitment
+      - fellow
+
+  - name: "Ramakrishna Mission VERI"
+    url: "https://rkmvu.ac.in/recruitment"
     category: "research"
     freshness_days: 60
     include_patterns:
+      - faculty
+      - research
       - recruitment
       - vacancy
-      - notice
-      - pdf
- 
-  - name: " Ramakrishna Mission"
-    url: "https://rkmvu.ac.in/category/careers/"
+
+  # ── TIER 1: IITs ──
+
+  - name: "IIT Bombay"
+    url: "https://www.iitb.ac.in/en/education/research-positions"
     category: "research"
     freshness_days: 60
     include_patterns:
+      - jrf
+      - srf
+      - project associate
+      - research associate
       - recruitment
+
+  - name: "IIT Delhi"
+    url: "https://careers.iitd.ac.in/"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - project
+      - fellow
+      - recruitment
+
+  - name: "IIT Madras"
+    url: "https://research.iitm.ac.in/recruitment"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - project associate
+      - research
+      - recruitment
+
+  - name: "IIT Kanpur"
+    url: "https://www.iitk.ac.in/career"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - research associate
+      - project
+      - recruitment
+
+  - name: "IIT Roorkee"
+    url: "https://www.iitr.ac.in/campus/Recruitment"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - project associate
+      - project assistant
+      - recruitment
+
+  - name: "IIT Guwahati"
+    url: "https://www.iitg.ac.in/research-positions"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - project associate
+      - recruitment
+
+  - name: "IIT Hyderabad"
+    url: "https://iith.ac.in/research-opportunities/"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - project
+      - recruitment
+
+  # ── TIER 1: IISERs ──
+
+  - name: "IISc Bangalore"
+    url: "https://www.iisc.ac.in/research/research-positions/"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - research associate
+      - project associate
+      - jrf
+      - recruitment
+
+  - name: "IISER Pune"
+    url: "https://www.iiserpune.ac.in/research/positions"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - fellow
+      - project
+      - recruitment
+
+  - name: "IISER Bhopal"
+    url: "https://www.iiserb.ac.in/vacancies.php"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - research
+      - project
+
+  - name: "IISER Mohali"
+    url: "https://www.iisermohali.ac.in/jobs"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - srf
+      - project
+      - recruitment
+
+  # ── TIER 1: Premier Research Institutes ──
+
+  - name: "TIFR Mumbai"
+    url: "https://www.tifr.res.in/vacancies"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - research scholar
+      - research associate
+      - fellow
       - vacancy
-      - notice
+
+  - name: "NCBS Bangalore"
+    url: "https://www.ncbs.res.in/opportunities"
+    category: "research"
+    freshness_days: 60
+    include_patterns:
+      - research associate
+      - fellow
+      - position
+      - vacancy
+
+  - name: "IMSc Chennai"
+    url: "https://www.imsc.res.in/vacancies"
+    category: "research"
+    freshness_days: 90
+    include_patterns:
+      - postdoc
+      - research associate
+      - fellow
+      - vacancy
+
+  - name: "CMI Chennai"
+    url: "https://www.cmi.ac.in/jobs.php"
+    category: "research"
+    freshness_days: 90
+    include_patterns:
+      - faculty
+      - postdoc
+      - fellow
+      - recruitment
+
+  # ── TIER 1: Government / Space / Defence ──
+
+  - name: "ISRO"
+    url: "https://www.isro.gov.in/Recruitment.html"
+    category: "government"
+    freshness_days: 90
+    include_patterns:
+      - scientist
+      - engineer
+      - recruitment
+      - jrf
       - pdf
 
-  - name: "ISRO Careers"
-    url: "https://www.isro.gov.in/careers"
+  - name: "DRDO"
+    url: "https://www.drdo.gov.in/drdo/recruitment"
+    category: "government"
+    freshness_days: 90
+    include_patterns:
+      - jrf
+      - srf
+      - recruitment
+      - scientist
+      - fellow
+
+  - name: "BARC"
+    url: "https://www.barc.gov.in/recruitment/"
+    category: "government"
+    freshness_days: 90
+    include_patterns:
+      - oces
+      - dgfs
+      - scientific officer
+      - recruitment
+
+  - name: "DAE"
+    url: "https://www.dae.gov.in/recruitment"
     category: "government"
     freshness_days: 90
     include_patterns:
       - recruitment
-      - vacancy
-      - pdf
-      - notification
       - scientist
+      - officer
+      - vacancy
 
-  - name: "CSIR India"
-    url: "https://www.csir.res.in/opportunities"
+  # ── TIER 2: CSIR Labs ──
+
+  - name: "CSIR HQ"
+    url: "https://www.csir.res.in/recruitment"
     category: "government"
     freshness_days: 60
     include_patterns:
-      - recruitment
-      - vacancy
       - jrf
       - srf
-      - project
-      - pdf
+      - project associate
+      - recruitment
+      - fellow
+
+  - name: "CSIR-IICT Hyderabad"
+    url: "https://www.iict.res.in/vacancies"
+    category: "government"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - project associate
+      - recruitment
+
+  - name: "CSIR-NPL Delhi"
+    url: "https://www.nplindia.org/vacancies"
+    category: "government"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - project associate
+      - research
+      - recruitment
+
+  - name: "CSIR-CEERI Pilani"
+    url: "https://www.ceeri.res.in/recruitments/"
+    category: "government"
+    freshness_days: 60
+    include_patterns:
+      - jrf
+      - project associate
+      - scientist
+      - recruitment
+
+  # ── TIER 2: Tech & Corporate Research Labs ──
+
+  - name: "Google Research India"
+    url: "https://research.google/careers/"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - intern
+      - scientist
+      - engineer
+      - india
+
+  - name: "Microsoft Research India"
+    url: "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - intern
+      - fellow
+      - scientist
+
+  - name: "Adobe Research India"
+    url: "https://research.adobe.com/careers/"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - intern
+      - scientist
+
+  - name: "Samsung Research India"
+    url: "https://research.samsung.com/careers"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - intern
+      - scientist
+      - engineer
+
+  - name: "IBM Research India"
+    url: "https://research.ibm.com/labs/india"
+    category: "tech"
+    freshness_days: 30
+    include_patterns:
+      - research
+      - intern
+      - scientist
+
+  # ── TIER 2: Internship & Job Portals ──
 
   - name: "Internshala ML"
     url: "https://internshala.com/internships/machine-learning-internship"
@@ -187,9 +451,9 @@ sources:
     freshness_days: 14
     include_patterns:
       - machine learning
-      - data science
-      - python
       - deep learning
+      - python
+      - data science
       - internship
 
   - name: "Internshala Data Science"
@@ -198,49 +462,82 @@ sources:
     freshness_days: 14
     include_patterns:
       - data science
+      - analytics
       - python
       - internship
-      - machine learning
 
-  - name: "FreeJobAlert Research"
-    url: "https://www.freejobalert.com/government-jobs/research-scientist-jobs"
-    category: "government"
-    freshness_days: 30
+  - name: "Internshala Computer Vision"
+    url: "https://internshala.com/internships/computer-vision-internship"
+    category: "internship"
+    freshness_days: 14
     include_patterns:
-      - research
-      - scientist
+      - computer vision
+      - opencv
+      - deep learning
+      - internship
+
+  - name: "FreeJobAlert"
+    url: "https://www.freejobalert.com/latest-notifications/"
+    category: "government"
+    freshness_days: 7
+    include_patterns:
       - jrf
-      - fellowship
-      - data
+      - scientist
+      - research
+      - data scientist
+      - machine learning
+      - engineer
 
   - name: "FacultyTub JRF"
-    url: "https://www.facultytub.com/category/jrf-srf"
+    url: "https://www.facultytub.com/jrf-jobs/"
     category: "research"
-    freshness_days: 21
+    freshness_days: 14
     include_patterns:
       - jrf
       - srf
-      - machine learning
-      - data science
-      - computer science
+      - project associate
+      - fellow
 
-  - name: "Google Research India"
-    url: "https://research.google/careers"
-    category: "tech"
+  # ── TIER 2: Government Tech Bodies ──
+
+  - name: "C-DAC Careers"
+    url: "https://www.cdac.in/index.aspx?id=careers"
+    category: "government"
     freshness_days: 30
     include_patterns:
-      - research
-      - engineer
+      - project engineer
       - scientist
-      - machine learning
-      - india
+      - recruitment
+      - engineer
 
-  - name: "Microsoft Research India"
-    url: "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/opportunities"
-    category: "tech"
+  - name: "NIELIT"
+    url: "https://www.nielit.gov.in/recruitment"
+    category: "government"
     freshness_days: 30
     include_patterns:
-      - research
-      - intern
-      - fellowship
-      - machine learning
+      - recruitment
+      - scientist
+      - engineer
+      - vacancy
+
+  # ── TIER 3: Universities ──
+
+  - name: "University of Hyderabad"
+    url: "https://uohyd.ac.in/recruitment.html"
+    category: "research"
+    freshness_days: 45
+    include_patterns:
+      - jrf
+      - srf
+      - project associate
+      - recruitment
+
+  - name: "Calcutta University"
+    url: "https://www.caluniv.ac.in/Notification-Folder/Recruitment.htm"
+    category: "research"
+    freshness_days: 45
+    include_patterns:
+      - jrf
+      - project
+      - recruitment
+      - vacancy
